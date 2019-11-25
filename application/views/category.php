@@ -41,9 +41,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
 	          <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
-	          <li class="nav-item active"><a href="#" class="nav-link">Categories</a></li>
-	          <li class="nav-item"><a href="#" class="nav-link">About</a></li>
-	          <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+            <li class="nav-item active"><a href="#" class="nav-link">Categories</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
 	        </ul>
 	      </div>
 	    </div>
@@ -55,145 +55,100 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
           <div class="col-md-9 ftco-animate pb-5 text-center">
-          	<p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a></span> <span class="mr-2"><a href="#">Categories <i class="ion-ios-arrow-forward"></i></a></span></p>
-            <h1 class="mb-3 bread">Lifestyle</h1>
+          	<p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a></span></p>
+            <h1 class="mb-3 bread">Categories</h1>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="ftco-section ftco-degree-bg">
-      <div class="container">
+		<section class="ftco-section ftco-agent">
+    	<div class="container">
         <div class="row">
-          <div class="col-md-8 order-md-last ftco-animate">
+        	<div class="col-md-3">
+        		<div class="agent">
+    					<div class="img">
+		    				<img src="<?php echo base_url('assets/images/team-1.jpg')?>" class="img-fluid" alt="Colorlib Template">
+	    				</div>
+	    				<div class="desc">
+	    					<h3><a href="#">Music</a></h3>
+	    				</div>
+    				</div>
+        	</div>
+        	<div class="col-md-3">
+        		<div class="agent">
+    					<div class="img">
+		    				<img src="<?php echo base_url('assets/images/team-2.jpg')?>" class="img-fluid" alt="Colorlib Template">
+	    				</div>
+	    				<div class="desc">
+	    					<h3><a href="#">Photography</a></h3>
+	    				</div>
+    				</div>
+        	</div>
+        	<div class="col-md-3">
+        		<div class="agent">
+    					<div class="img">
+		    				<img src="<?php echo base_url('assets/images/team-3.jpg')?>" class="img-fluid" alt="Colorlib Template">
+	    				</div>
+	    				<div class="desc">
+	    					<h3><a href="#">Creativepreneur</a></h3>
+	    				</div>
+    				</div>
+        	</div>
+        	<div class="col-md-3">
+        		<div class="agent">
+    					<div class="img">
+		    				<img src="<?php echo base_url('assets/images/team-4.jpg')?>" class="img-fluid" alt="Colorlib Template">
+	    				</div>
+	    				<div class="desc">
+	    					<h3><a href="#">Fashion</a></h3>
+	    				</div>
+    				</div>
+        	</div>
 
-            <div class="d-flex">
-              <div class="pr-2"><span class="icon icon-user"></span></div>
-              <div class="px-2">Farhan Ichlasulamal</div>
-              <div class="px-2">|</div>
-              <div class="px-2"><span class="icon-calendar"></span></div>
-              <div class="px-2">Jumat, 2 April 1999 10.15 WIB</div>
-            </div>
-
-            <hr>
-
-            <h2 class="mb-3">Menjalankan Gaya Hidup 'Eco-Friendly' di Kantor</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-            <p>
-              <img src="<?php echo base_url('assets/images/work-1.jpg')?>" alt="" class="img-fluid">
-            </p>
-
-            <div class="row justify-content-center my-5">
-              <div class="col-md-7 text-center heading-section ftco-animate">
-                <span class="subheading">Tutorial</span>
-                <h2 class="mb-3">Step</h2>
-              </div>
-            </div>
-
-            <div class="row no-gutters mb-5">
-              <div class="col-md-6 p-md-5 img img-2 d-flex justify-content-center align-items-center" style="background-image: url(<?php echo base_url('assets/images/about.jpg')?>);">
-              </div>
-              <div class="col-md-6 wrap-about py-md-5 ftco-animate">
-                <div class="heading-section p-md-5">
-                  <h2 class="mb-4">1. We Put People First.</h2>
-                  <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-                </div>
-              </div>
-            </div>
-            <div class="row no-gutters mb-5">
-              <div class="col-md-6 p-md-5 img img-2 d-flex justify-content-center align-items-center" style="background-image: url(<?php echo base_url('assets/images/about.jpg')?>);">
-              </div>
-              <div class="col-md-6 wrap-about py-md-5 ftco-animate">
-                <div class="heading-section p-md-5">
-                  <h2 class="mb-4">2. Just Do It.</h2>
-                  <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-                </div>
-              </div>
-              <!-- TIPS -->
-              <div class="about-author d-flex p-4 bg-light ftco-animate">
-                <div class="bio d-flex align-items-center mr-4">
-                  <img src="<?php echo base_url('assets/images/idea.png')?>" alt="Image placeholder" class="img-fluid">
-                </div>
-                <div class="desc">
-                  <h3>For Your Information!</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus itaque, autem necessitatibus voluptate quod mollitia delectus aut, sunt placeat nam vero culpa sapiente consectetur similique, inventore eos fugit cupiditate numquam!</p>
-                  <h6>Farhan - Profesi</h6>
-                </div>
-              </div>
-            </div>
-            <div class="row no-gutters mb-5">
-              <div class="col-md-6 p-md-5 img img-2 d-flex justify-content-center align-items-center" style="background-image: url(<?php echo base_url('assets/images/about.jpg')?>);">
-              </div>
-              <div class="col-md-6 wrap-about py-md-5 ftco-animate">
-                <div class="heading-section p-md-5">
-                  <h2 class="mb-4">3. Do It Again.</h2>
-                  <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-                </div>
-              </div>
-            </div>
-
-
-          </div> <!-- .col-md-8 -->
-          <div class="col-md-4 sidebar ftco-animate">
-            <div class="sidebar-box">
-              <form action="#" class="search-form">
-                <div class="form-group">
-                  <span class="icon icon-search"></span>
-                  <input type="text" class="form-control" placeholder="Type a keyword and hit enter">
-                </div>
-              </form>
-            </div>
-            <div class="sidebar-box ftco-animate">
-              <div class="categories">
-                <h3>Categories</h3>
-                <li><a href="#">Jobs <span>(12)</span></a></li>
-                <li><a href="#">Visual Assistant <span>(22)</span></a></li>
-                <li><a href="#">Coffee <span>(37)</span></a></li>
-                <li><a href="#">Drinks <span>(42)</span></a></li>
-                <li><a href="#">Foods <span>(14)</span></a></li>
-                <li><a href="#">Travel <span>(140)</span></a></li>
-              </div>
-            </div>
-
-            <div class="sidebar-box ftco-animate">
-              <h3>Recent Article</h3>
-              <div class="block-21 mb-4 d-flex">
-                <a class="blog-img mr-4" style="background-image: url(<?php echo base_url('assets/images/image_1.jpg')?>);"></a>
-                <div class="text">
-                  <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-                  <div class="meta">
-                    <div><a href="#"><span class="icon-calendar"></span> July 12, 2018</a></div>
-                    <div><a href="#"><span class="icon-person"></span> Farhan Ichlasulamal</a></div>
-                  </div>
-                </div>
-              </div>
-              <div class="block-21 mb-4 d-flex">
-                <a class="blog-img mr-4" style="background-image: url(<?php echo base_url('assets/images/image_2.jpg')?>);"></a>
-                <div class="text">
-                  <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-                  <div class="meta">
-                    <div><a href="#"><span class="icon-calendar"></span> July 12, 2018</a></div>
-                    <div><a href="#"><span class="icon-person"></span> Farhan Ichlasulamal</a></div>
-                  </div>
-                </div>
-              </div>
-              <div class="block-21 mb-4 d-flex">
-                <a class="blog-img mr-4" style="background-image: url(<?php echo base_url('assets/images/image_3.jpg')?>);"></a>
-                <div class="text">
-                  <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-                  <div class="meta">
-                    <div><a href="#"><span class="icon-calendar"></span> July 12, 2018</a></div>
-                    <div><a href="#"><span class="icon-person"></span> Farhan Ichlasulamal</a></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
+        	<div class="col-md-3">
+        		<div class="agent">
+    					<div class="img">
+		    				<img src="<?php echo base_url('assets/images/team-5.jpg')?>" class="img-fluid" alt="Colorlib Template">
+	    				</div>
+	    				<div class="desc">
+	    					<h3><a href="#">Sneaker</a></h3>
+	    				</div>
+    				</div>
+        	</div>
+        	<div class="col-md-3">
+        		<div class="agent">
+    					<div class="img">
+		    				<img src="<?php echo base_url('assets/images/team-6.jpg')?>" class="img-fluid" alt="Colorlib Template">
+	    				</div>
+	    				<div class="desc">
+	    					<h3><a href="#">Food</a></h3>
+	    				</div>
+    				</div>
+        	</div>
+        	<div class="col-md-3">
+        		<div class="agent">
+    					<div class="img">
+		    				<img src="<?php echo base_url('assets/images/team-1.jpg')?>" class="img-fluid" alt="Colorlib Template">
+	    				</div>
+	    				<div class="desc">
+	    					<h3><a href="#">Architecture</a></h3>
+	    				</div>
+    				</div>
+        	</div>
+        	<div class="col-md-3">
+        		<div class="agent">
+    					<div class="img">
+		    				<img src="<?php echo base_url('assets/images/team-8.jpg')?>" class="img-fluid" alt="Colorlib Template">
+	    				</div>
+	    				<div class="desc">
+	    					<h3><a href="#">Lifestyle</a></h3>
+	    				</div>
+    				</div>
+        	</div>
         </div>
-      </div>
-    </section> <!-- .section -->
-
-
+    	</div>
+    </section>
 
     <footer class="ftco-footer ftco-section">
       <div class="container">
