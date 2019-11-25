@@ -1,6 +1,6 @@
     /*
     Flaticon icon font: Flaticon
-    Creation date: 25/07/2019 12:04
+    Creation date: 25/11/2019 16:37
     */
 
     @font-face {
@@ -37,18 +37,14 @@
   font-smoothing: antialiased;
     }
 
-    .flaticon-piggy-bank:before { content: "\f100"; }
-.flaticon-wallet:before { content: "\f101"; }
-.flaticon-file:before { content: "\f102"; }
-.flaticon-locked:before { content: "\f103"; }
-.flaticon-bed:before { content: "\f104"; }
-.flaticon-bathtub:before { content: "\f105"; }
-.flaticon-floor-plan:before { content: "\f106"; }
+    .flaticon-think:before { content: "\f100"; }
+.flaticon-group:before { content: "\f101"; }
+.flaticon-like:before { content: "\f102"; }
+.flaticon-video-lecture:before { content: "\f103"; }
+.flaticon-think-1:before { content: "\f104"; }
     
-    $font-Flaticon-piggy-bank: "\f100";
-    $font-Flaticon-wallet: "\f101";
-    $font-Flaticon-file: "\f102";
-    $font-Flaticon-locked: "\f103";
-    $font-Flaticon-bed: "\f104";
-    $font-Flaticon-bathtub: "\f105";
-    $font-Flaticon-floor-plan: "\f106";
+    $font-Flaticon-think: "\f100";
+    $font-Flaticon-group: "\f101";
+    $font-Flaticon-like: "\f102";
+    $font-Flaticon-video-lecture: "\f103";
+    $font-Flaticon-think-1: "\f104";

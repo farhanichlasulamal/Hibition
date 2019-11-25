@@ -1,13 +1,13 @@
 	/*
   	Flaticon icon font: Flaticon
-  	Creation date: 04/01/2019 13:45
+  	Creation date: 20/11/2019 14:39
   	*/
-
 
 @font-face {
   font-family: "Flaticon";
   src: url("../fonts/flaticon/font/Flaticon.eot");
   src: url("../fonts/flaticon/font/Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("../fonts/flaticon/font/Flaticon.woff2") format("woff2"),
        url("../fonts/flaticon/font/Flaticon.woff") format("woff"),
        url("../fonts/flaticon/font/Flaticon.ttf") format("truetype"),
        url("../fonts/flaticon/font/Flaticon.svg#Flaticon") format("svg");
@@ -36,10 +36,8 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.flaticon-piggy-bank:before { content: "\f100"; }
-.flaticon-wallet:before { content: "\f101"; }
-.flaticon-file:before { content: "\f102"; }
-.flaticon-locked:before { content: "\f103"; }
-.flaticon-bed:before { content: "\f104"; }
-.flaticon-bathtub:before { content: "\f105"; }
-.flaticon-floor-plan:before { content: "\f106"; }
+.flaticon-think:before { content: "\f100"; }
+.flaticon-group:before { content: "\f101"; }
+.flaticon-like:before { content: "\f102"; }
+.flaticon-video-lecture:before { content: "\f103"; }
+.flaticon-think-1:before { content: "\f104"; }

@@ -40,13 +40,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-	          <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
-	          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-	          <li class="nav-item"><a href="agent.html" class="nav-link">Agent</a></li>
-	          <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
-	          <li class="nav-item"><a href="properties.html" class="nav-link">Properties</a></li>
-	          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+            <li class="nav-item active"><a href="#" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Category</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
 	        </ul>
 	      </div>
 	    </div>
@@ -95,37 +92,37 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="row d-flex">
           <div class="col-md-3 d-flex align-self-stretch ftco-animate">
             <div class="media block-6 services d-block text-center">
-            	<div class="icon d-flex justify-content-center align-items-center"><span class="flaticon-piggy-bank"></span></div>
+            	<div class="icon d-flex justify-content-center align-items-center"><span class="flaticon-think-1"></span></div>
               <div class="media-body py-md-4">
-                <h3>No Downpayment</h3>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                <h3>Inspiring Things</h3>
+                <p>HIBITION memberikan banyak hal menarik yang menginspirasi untuk kaum urban di Indonesia.</p>
               </div>
             </div>      
           </div>
           <div class="col-md-3 d-flex align-self-stretch ftco-animate">
             <div class="media block-6 services d-block text-center">
-            	<div class="icon d-flex justify-content-center align-items-center"><span class="flaticon-wallet"></span></div>
+            	<div class="icon d-flex justify-content-center align-items-center"><span class="flaticon-video-lecture"></span></div>
               <div class="media-body py-md-4">
-                <h3>All Cash Offer</h3>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                <h3>Tutorial Based</h3>
+                <p>HIBITION menyajikan informasi dalam bentuk tutorial sehingga pembaca dapat mengetahui step-by-step dalam menekuni passion mereka.</p>
               </div>
             </div>      
           </div>
           <div class="col-md-3 d-flex align-self-stretch ftco-animate">
             <div class="media block-6 services d-block text-center">
-            	<div class="icon d-flex justify-content-center align-items-center"><span class="flaticon-file"></span></div>
+            	<div class="icon d-flex justify-content-center align-items-center"><span class="flaticon-group"></span></div>
               <div class="media-body py-md-4">
-                <h3>Experts in Your Corner</h3>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                <h3>It's All Free</h3>
+                <p>Semua konten HIBITION dapat diakses secara gratis tanpa perlu berlangganan.</p>
               </div>
             </div>      
           </div>
           <div class="col-md-3 d-flex align-self-stretch ftco-animate">
             <div class="media block-6 services d-block text-center">
-            	<div class="icon d-flex justify-content-center align-items-center"><span class="flaticon-locked"></span></div>
+            	<div class="icon d-flex justify-content-center align-items-center"><span class="flaticon-like"></span></div>
               <div class="media-body py-md-4">
-                <h3>Lokced in Pricing</h3>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                <h3>Expert Advice</h3>
+                <p>Tersedia tips menarik dari para expert di bidangnya.</p>
               </div>
             </div>      
           </div>
