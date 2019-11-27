@@ -7,10 +7,10 @@ class Kategori_model extends CI_Model {
 		parent::__construct();
 	}
 
-	public function getKategori($id){
+	public function getKategori(){
 		$this->db->from('kategori');
-		$this->db->where('id_kategori', $id);
-		return $this->db->get()->row();
+		$this->db->order_by('nama_kategori', 'ASC');
+		return $this->db->get()->result();
 	}
 
 	public function insertKategori($data) {

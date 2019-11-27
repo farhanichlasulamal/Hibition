@@ -41,9 +41,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
             <li class="nav-item active"><a href="#" class="nav-link">Home</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Category</a></li>
+            <li class="nav-item"><a href="<?php echo site_url('Category');?>" class="nav-link">Category</a></li>
             <li class="nav-item"><a href="#" class="nav-link">About</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+            <li class="nav-item"><a href="<?php echo site_url('Contact');?>" class="nav-link">Contact</a></li>
 	        </ul>
 	      </div>
 	    </div>

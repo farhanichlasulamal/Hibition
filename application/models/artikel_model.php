@@ -10,7 +10,7 @@ class Artikel_model extends CI_Model {
 	public function getArtikel($id){
 		$this->db->from('artikel');
 		$this->db->where('id_artikel', $id);
-		return $this->db->get()->row();
+		return $this->db->get()->result();
 	}
 
 	public function insertArtikel($data) {
