@@ -55,7 +55,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
           <div class="col-md-9 ftco-animate pb-5 text-center">
-          	<p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a></span></p>
+          	<p class="breadcrumbs"><span class="mr-2"><a href="<?php echo site_url('Home');?>">Home <i class="ion-ios-arrow-forward"></i></a></span></p>
             <h1 class="mb-3 bread">Categories</h1>
           </div>
         </div>
@@ -73,7 +73,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		    				<img src="<?php echo base_url('assets/images/'.$key->gambar_kategori)?>" class="img-fluid" alt="Colorlib Template">
 	    				</div>
 	    				<div class="desc">
-	    					<h3><a href="#"><?php echo $key->nama_kategori ?></a></h3>
+	    					<h3><a href="<?php echo site_url('Category/show_categories_item/'.$key->id_kategori);?>"><?php echo $key->nama_kategori ?></a></h3>
 	    				</div>
     				</div>
         	</div>

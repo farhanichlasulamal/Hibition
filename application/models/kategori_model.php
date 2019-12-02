@@ -27,6 +27,11 @@ class Kategori_model extends CI_Model {
 		return $this->db->delete('kategori');
 	}
 
+	public function getKategoriById($id){
+		$this->db->from('kategori');
+		$this->db->where('id_kategori', $id);
+		return $this->db->get()->row();
+	}
 }
 
 /* End of file artikel_model.php */

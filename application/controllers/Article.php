@@ -3,18 +3,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Article extends CI_Controller {
 
+	public function __construct(){
+		parent::__construct();
+		$this->load->model("artikel_model");
+		$this->load->model("step_model");
+	}
+
 	public function index()
 	{
 		
 	}
 
-	private function checkSession() {
-		if(!$this->session->logged_in) {
-			redirect('login');
-		}
-		if($this->session->id_divisi != SDM_ID) {
-			redirect('dashboard');
-		}
+	public function show_article($id){
+		$data['artikel'] = $this->artikel_model->getArtikel($id);
+		$data['step'] = $this->step_model->getStep($id);
+		$this->load->view('category', $data);
 	}
 
 }

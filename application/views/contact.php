@@ -77,13 +77,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		          	<div class="icon">
 		          		<span class="icon-mobile-phone"></span>
 		          	</div>
-		            <p><span>Phone:</span> <a href="tel://1234567920">+ 1235 2355 98</a></p>
+		            <p><span>Phone:</span> <a href="tel://1234567920">+ 62 821 1382 3629</a></p>
 		          </div>
 		          <div class="col-md-4 text-center py-4">
 		          	<div class="icon">
 		          		<span class="icon-envelope-o"></span>
 		          	</div>
-		            <p><span>Email:</span> <a href="mailto:info@yoursite.com">info@yoursite.com</a></p>
+		            <p><span>Email:</span> <a href="mailto:info@yoursite.com">contact@hibition.com</a></p>
 		          </div>
 		        </div>
           </div>
@@ -124,8 +124,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="row mb-5">
           <div class="col-md">
             <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Uptown</h2>
-              <p>Far far away, behind the word mountains, far from the countries.</p>
+              <h2 class="ftco-heading-2">H I B I T I O N</h2>
+              <p>HIBITION adalah sebuah wadah untuk anak urban Indonesia menemukan hobi dan gaya hidup yang sedang tren saat ini.</p>
               <ul class="ftco-footer-social list-unstyled mt-5">
                 <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
                 <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>

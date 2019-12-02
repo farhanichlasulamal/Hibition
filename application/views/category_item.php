@@ -40,26 +40,26 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
         <div class="collapse navbar-collapse" id="ftco-nav">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="<?php echo site_url('Home');?>" class="nav-link">Home</a></li>
             <li class="nav-item active"><a href="#" class="nav-link">Categories</a></li>
             <li class="nav-item"><a href="#" class="nav-link">About</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+            <li class="nav-item"><a href="<?php echo site_url('Contact');?>" class="nav-link">Contact</a></li>
           </ul>
         </div>
       </div>
     </nav>
     <!-- END nav -->
     
-    <section class="hero-wrap hero-wrap-2 ftco-degree-bg js-fullheight" style="background-image: url(<?php echo base_url('assets/images/bg_1.jpg')?>);" data-stellar-background-ratio="0.5">
+    <section class="hero-wrap hero-wrap-2 ftco-degree-bg js-fullheight" style="background-image: url(<?php echo base_url('assets/images/'.$category->gambar_kategori)?>);" data-stellar-background-ratio="0.5">
       <div class="overlay"></div>
       <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
           <div class="col-md-9 ftco-animate pb-5 text-center">
             <p class="breadcrumbs">
-              <span class="mr-2"><a href="#">Home <i class="ion-ios-arrow-forward"></i></a></span>
-              <span class="mr-2"><a href="#">Categories <i class="ion-ios-arrow-forward"></i></a></span>
+              <span class="mr-2"><a href="<?php echo site_url('Home');?>">Home <i class="ion-ios-arrow-forward"></i></a></span>
+              <span class="mr-2"><a href="<?php echo site_url('Category');?>">Categories <i class="ion-ios-arrow-forward"></i></a></span>
             </p>
-            <h1 class="mb-3 bread">Lifestyle</h1>
+            <h1 class="mb-3 bread"><?php echo $category->nama_kategori ?></h1>
           </div>
         </div>
       </div>
@@ -68,166 +68,30 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<section class="ftco-section">
     	<div class="container">
         <div class="row">
+          <!-- assets/images/work-1.jpg -->
+          <?php foreach ($item as $key): ?>
         	<div class="col-md-4">
         		<div class="property-wrap ftco-animate">
-        			<a href="properties-single.html" class="img" style="background-image: url(<?php echo base_url('assets/images/work-1.jpg')?>);"></a>
+        			<a href="<?php echo site_url('Article/'.$key->id_artikel);?>" class="img" style="background-image: url(<?php echo base_url('assets/images/'.$key->gambar_artikel)?>);"></a>
         			<div class="text">
         				<ul class="property_list">
-        					<li><small><span class="icon icon-user"></span>Farhan Ichlasulamal</small></li>
-        					<li><small><span class="icon-calendar"></span>Jumat, 2 April 1999 10.15 WIB</small></li>
+        					<li><small><span class="icon icon-user"></span><?php echo $key->nama ?></small></li>
+        					<li><small><span class="icon-calendar"></span><?php echo $key->tanggal_artikel." ".$key->waktu_artikel." WIB" ?></small></li>
         				</ul>
-        				<h3><a href="properties-single.html">The Blue Sky Home</a></h3>
-        				<span class="location">Lifestyle</span>
-        				<a href="properties-single.html" class="d-flex align-items-center justify-content-center btn-custom">
+        				<h3><a href="<?php echo site_url('Article/show_article/'.$key->id_artikel);?>"><?php echo $key->judul ?></a></h3>
+        				<span class="location"><?php echo $category->nama_kategori ?></span>
+        				<a href="<?php echo site_url('Article/show_article/'.$key->id_artikel);?>" class="d-flex align-items-center justify-content-center btn-custom">
         					<span class="ion-ios-link"></span>
         				</a>
         			</div>
         		</div>
         	</div>
-        	<div class="col-md-4">
-        		<div class="property-wrap ftco-animate">
-        			<a href="properties-single.html" class="img" style="background-image: url(<?php echo base_url('assets/images/work-2.jpg')?>);"></a>
-        			<div class="text">
-                <ul class="property_list">
-                  <li><small><span class="icon icon-user"></span>Farhan Ichlasulamal</small></li>
-                  <li><small><span class="icon-calendar"></span>Jumat, 2 April 1999 10.15 WIB</small></li>
-                </ul>
-                <h3><a href="properties-single.html">The Blue Sky Home</a></h3>
-                <span class="location">Lifestyle</span>
-                <a href="properties-single.html" class="d-flex align-items-center justify-content-center btn-custom">
-                  <span class="ion-ios-link"></span>
-                </a>
-              </div>
-        		</div>
-        	</div>
-        	<div class="col-md-4">
-        		<div class="property-wrap ftco-animate">
-        			<a href="properties-single.html" class="img" style="background-image: url(<?php echo base_url('assets/images/work-3.jpg')?>);"></a>
-        			<div class="text">
-                <ul class="property_list">
-                  <li><small><span class="icon icon-user"></span>Farhan Ichlasulamal</small></li>
-                  <li><small><span class="icon-calendar"></span>Jumat, 2 April 1999 10.15 WIB</small></li>
-                </ul>
-                <h3><a href="properties-single.html">The Blue Sky Home</a></h3>
-                <span class="location">Lifestyle</span>
-                <a href="properties-single.html" class="d-flex align-items-center justify-content-center btn-custom">
-                  <span class="ion-ios-link"></span>
-                </a>
-              </div>
-        		</div>
-        	</div>
+          <?php endforeach ?>
 
-        	<div class="col-md-4">
-        		<div class="property-wrap ftco-animate">
-        			<a href="properties-single.html" class="img" style="background-image: url(<?php echo base_url('assets/images/work-4.jpg')?>);"></a>
-        			<div class="text">
-                <ul class="property_list">
-                  <li><small><span class="icon icon-user"></span>Farhan Ichlasulamal</small></li>
-                  <li><small><span class="icon-calendar"></span>Jumat, 2 April 1999 10.15 WIB</small></li>
-                </ul>
-                <h3><a href="properties-single.html">The Blue Sky Home</a></h3>
-                <span class="location">Lifestyle</span>
-                <a href="properties-single.html" class="d-flex align-items-center justify-content-center btn-custom">
-                  <span class="ion-ios-link"></span>
-                </a>
-              </div>
-        		</div>
-        	</div>
-        	<div class="col-md-4">
-        		<div class="property-wrap ftco-animate">
-        			<a href="properties-single.html" class="img" style="background-image: url(<?php echo base_url('assets/images/work-5.jpg')?>);"></a>
-        			<div class="text">
-                <ul class="property_list">
-                  <li><small><span class="icon icon-user"></span>Farhan Ichlasulamal</small></li>
-                  <li><small><span class="icon-calendar"></span>Jumat, 2 April 1999 10.15 WIB</small></li>
-                </ul>
-                <h3><a href="properties-single.html">The Blue Sky Home</a></h3>
-                <span class="location">Lifestyle</span>
-                <a href="properties-single.html" class="d-flex align-items-center justify-content-center btn-custom">
-                  <span class="ion-ios-link"></span>
-                </a>
-              </div>
-        		</div>
-        	</div>
-        	<div class="col-md-4">
-        		<div class="property-wrap ftco-animate">
-        			<a href="properties-single.html" class="img" style="background-image: url(<?php echo base_url('assets/images/work-6.jpg')?>);"></a>
-        			<div class="text">
-                <ul class="property_list">
-                  <li><small><span class="icon icon-user"></span>Farhan Ichlasulamal</small></li>
-                  <li><small><span class="icon-calendar"></span>Jumat, 2 April 1999 10.15 WIB</small></li>
-                </ul>
-                <h3><a href="properties-single.html">The Blue Sky Home</a></h3>
-                <span class="location">Lifestyle</span>
-                <a href="properties-single.html" class="d-flex align-items-center justify-content-center btn-custom">
-                  <span class="ion-ios-link"></span>
-                </a>
-              </div>
-        		</div>
-        	</div>
-
-        	<div class="col-md-4">
-        		<div class="property-wrap ftco-animate">
-        			<a href="properties-single.html" class="img" style="background-image: url(<?php echo base_url('assets/images/work-4.jpg')?>);"></a>
-        			<div class="text">
-                <ul class="property_list">
-                  <li><small><span class="icon icon-user"></span>Farhan Ichlasulamal</small></li>
-                  <li><small><span class="icon-calendar"></span>Jumat, 2 April 1999 10.15 WIB</small></li>
-                </ul>
-                <h3><a href="properties-single.html">The Blue Sky Home</a></h3>
-                <span class="location">Lifestyle</span>
-                <a href="properties-single.html" class="d-flex align-items-center justify-content-center btn-custom">
-                  <span class="ion-ios-link"></span>
-                </a>
-              </div>
-        		</div>
-        	</div>
-        	<div class="col-md-4">
-        		<div class="property-wrap ftco-animate">
-        			<a href="properties-single.html" class="img" style="background-image: url(<?php echo base_url('assets/images/work-5.jpg')?>);"></a>
-        			<div class="text">
-                <ul class="property_list">
-                  <li><small><span class="icon icon-user"></span>Farhan Ichlasulamal</small></li>
-                  <li><small><span class="icon-calendar"></span>Jumat, 2 April 1999 10.15 WIB</small></li>
-                </ul>
-                <h3><a href="properties-single.html">The Blue Sky Home</a></h3>
-                <span class="location">Lifestyle</span>
-                <a href="properties-single.html" class="d-flex align-items-center justify-content-center btn-custom">
-                  <span class="ion-ios-link"></span>
-                </a>
-              </div>
-        		</div>
-        	</div>
-        	<div class="col-md-4">
-        		<div class="property-wrap ftco-animate">
-        			<a href="properties-single.html" class="img" style="background-image: url(<?php echo base_url('assets/images/work-6.jpg')?>);"></a>
-        			<div class="text">
-                <ul class="property_list">
-                  <li><small><span class="icon icon-user"></span>Farhan Ichlasulamal</small></li>
-                  <li><small><span class="icon-calendar"></span>Jumat, 2 April 1999 10.15 WIB</small></li>
-                </ul>
-                <h3><a href="properties-single.html">The Blue Sky Home</a></h3>
-                <span class="location">Lifestyle</span>
-                <a href="properties-single.html" class="d-flex align-items-center justify-content-center btn-custom">
-                  <span class="ion-ios-link"></span>
-                </a>
-              </div>
-        		</div>
-        	</div>
         </div>
         <div class="row mt-5">
           <div class="col text-center">
-            <div class="block-27">
-              <ul>
-                <li><a href="#">&lt;</a></li>
-                <li class="active"><span>1</span></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li><a href="#">&gt;</a></li>
-              </ul>
-            </div>
+            <?php echo $pagination;?>
           </div>
         </div>
     	</div>

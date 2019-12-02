@@ -21,6 +21,14 @@ class Step_model extends CI_Model {
 		return $this->db->delete('step');
 	}
 
+	public function getStep($id){
+		$this->db->from('id_step');
+		$this->db->where('id_artikel_step', $id);
+		$this->db->order_by('nomor_urut', 'ASC');
+		$this->db->join('tips', 'tips.id_step_tips = step.id_step');
+		return $this->db->get()->result();
+	}
+
 }
 
 /* End of file step_model.php */
