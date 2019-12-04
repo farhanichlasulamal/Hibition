@@ -33,7 +33,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     
 	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
       <div class="container">
-        <a class="navbar-brand" href="index.html">H I B I T I O N</a>
+        <a class="navbar-brand" href="<?php echo site_url('Home');?>">H I B I T I O N</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="oi oi-menu"></span> Menu
         </button>
@@ -41,7 +41,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="collapse navbar-collapse" id="ftco-nav">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item"><a href="<?php echo site_url('Home');?>" class="nav-link">Home</a></li>
-            <li class="nav-item active"><a href="#" class="nav-link">Categories</a></li>
+            <li class="nav-item active"><a href="<?php echo site_url('Category');?>" class="nav-link">Categories</a></li>
             <li class="nav-item"><a href="#" class="nav-link">About</a></li>
             <li class="nav-item"><a href="<?php echo site_url('Contact');?>" class="nav-link">Contact</a></li>
           </ul>
@@ -68,15 +68,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<section class="ftco-section">
     	<div class="container">
         <div class="row">
-          <!-- assets/images/work-1.jpg -->
+          
           <?php foreach ($item as $key): ?>
         	<div class="col-md-4">
         		<div class="property-wrap ftco-animate">
-        			<a href="<?php echo site_url('Article/'.$key->id_artikel);?>" class="img" style="background-image: url(<?php echo base_url('assets/images/'.$key->gambar_artikel)?>);"></a>
+        			<a href="<?php echo site_url('Article/show_article/'.$key->id_artikel);?>" class="img" style="background-image: url(<?php echo base_url('assets/images/'.$key->gambar_artikel)?>);"></a>
         			<div class="text">
         				<ul class="property_list">
         					<li><small><span class="icon icon-user"></span><?php echo $key->nama ?></small></li>
-        					<li><small><span class="icon-calendar"></span><?php echo $key->tanggal_artikel." ".$key->waktu_artikel." WIB" ?></small></li>
+        					<li><small><span class="icon-calendar"></span><?php echo date('j F Y H:i', strtotime($key->tanggal_artikel." ".$key->waktu_artikel))." WIB"; ?></small></li>
         				</ul>
         				<h3><a href="<?php echo site_url('Article/show_article/'.$key->id_artikel);?>"><?php echo $key->judul ?></a></h3>
         				<span class="location"><?php echo $category->nama_kategori ?></span>

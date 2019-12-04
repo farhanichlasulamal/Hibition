@@ -22,10 +22,10 @@ class Step_model extends CI_Model {
 	}
 
 	public function getStep($id){
-		$this->db->from('id_step');
+		$this->db->from('step');
 		$this->db->where('id_artikel_step', $id);
 		$this->db->order_by('nomor_urut', 'ASC');
-		$this->db->join('tips', 'tips.id_step_tips = step.id_step');
+		$this->db->join('tips', 'tips.id_step_tips = step.id_step', 'left outer');
 		return $this->db->get()->result();
 	}
 

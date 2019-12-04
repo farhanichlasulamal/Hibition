@@ -33,33 +33,33 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     
 	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
-	      <a class="navbar-brand" href="index.html">H I B I T I O N</a>
+	      <a class="navbar-brand" href="<?php echo site_url('Home');?>">H I B I T I O N</a>
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="oi oi-menu"></span> Menu
 	      </button>
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-	          <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
-	          <li class="nav-item active"><a href="#" class="nav-link">Categories</a></li>
-	          <li class="nav-item"><a href="#" class="nav-link">About</a></li>
-	          <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+	          <li class="nav-item"><a href="<?php echo site_url('Home');?>" class="nav-link">Home</a></li>
+            <li class="nav-item active"><a href="<?php echo site_url('Category');?>" class="nav-link">Categories</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+            <li class="nav-item"><a href="<?php echo site_url('Contact');?>" class="nav-link">Contact</a></li>
 	        </ul>
 	      </div>
 	    </div>
 	  </nav>
     <!-- END nav -->
     
-    <section class="hero-wrap hero-wrap-2 ftco-degree-bg js-fullheight" style="background-image: url(<?php echo base_url('assets/images/bg_1.jpg')?>);" data-stellar-background-ratio="0.5">
+    <section class="hero-wrap hero-wrap-2 ftco-degree-bg js-fullheight" style="background-image: url(<?php echo base_url('assets/images/'.$artikel->gambar_kategori)?>);" data-stellar-background-ratio="0.5">
       <div class="overlay"></div>
       <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
           <div class="col-md-9 ftco-animate pb-5 text-center">
           	<p class="breadcrumbs">
-              <span class="mr-2"><a href="#">Home <i class="ion-ios-arrow-forward"></i></a></span>
-              <span class="mr-2"><a href="#">Categories <i class="ion-ios-arrow-forward"></i></a></span>
+              <span class="mr-2"><a href="<?php echo site_url('Home');?>">Home <i class="ion-ios-arrow-forward"></i></a></span>
+              <span class="mr-2"><a href="<?php echo site_url('Category');?>">Categories <i class="ion-ios-arrow-forward"></i></a></span>
             </p>
-            <h1 class="mb-3 bread">Lifestyle</h1>
+            <h1 class="mb-3 bread"><?php echo $artikel->nama_kategori ?></h1>
           </div>
         </div>
       </div>
@@ -72,18 +72,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
             <div class="d-flex">
               <div class="pr-2"><span class="icon icon-user"></span></div>
-              <div class="px-2">Farhan Ichlasulamal</div>
+              <div class="px-2"><?php echo $artikel->nama ?></div>
               <div class="px-2">|</div>
               <div class="px-2"><span class="icon-calendar"></span></div>
-              <div class="px-2">Jumat, 2 April 1999 10.15 WIB</div>
+              <div class="px-2">
+                <?php
+                  echo date('l, j F Y H:i', strtotime($artikel->tanggal_artikel." ".$artikel->waktu_artikel))." WIB"; 
+                ?>
+              </div>
             </div>
 
             <hr>
 
-            <h2 class="mb-3">Menjalankan Gaya Hidup 'Eco-Friendly' di Kantor</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+            <h2 class="mb-3"><?php echo $artikel->judul ?></h2>
+            <p><?php echo $artikel->ringkasan_artikel ?></p>
             <p>
-              <img src="<?php echo base_url('assets/images/work-1.jpg')?>" alt="" class="img-fluid">
+              <img src="<?php echo base_url('assets/images/'.$artikel->gambar_artikel)?>" alt="" class="img-fluid">
             </p>
 
             <div class="row justify-content-center my-5">
@@ -93,50 +97,37 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               </div>
             </div>
 
+            <?php foreach ($step as $key): ?>
             <div class="row no-gutters mb-5">
-              <div class="col-md-6 p-md-5 img img-2 d-flex justify-content-center align-items-center" style="background-image: url(<?php echo base_url('assets/images/about.jpg')?>);">
+              <div class="col-md-6 p-md-5 img img-2 d-flex justify-content-center align-items-center" style="background-image: url(<?php echo base_url('assets/images/'.$key->gambar_step)?>);">
               </div>
               <div class="col-md-6 wrap-about py-md-5 ftco-animate">
                 <div class="heading-section p-md-5">
-                  <h2 class="mb-4">1. We Put People First.</h2>
-                  <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-                </div>
-              </div>
-            </div>
-            <div class="row no-gutters mb-5">
-              <div class="col-md-6 p-md-5 img img-2 d-flex justify-content-center align-items-center" style="background-image: url(<?php echo base_url('assets/images/about.jpg')?>);">
-              </div>
-              <div class="col-md-6 wrap-about py-md-5 ftco-animate">
-                <div class="heading-section p-md-5">
-                  <h2 class="mb-4">2. Just Do It.</h2>
-                  <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+                  <h2 class="mb-4"><?php echo $key->nomor_urut.'. '.$key->judul_step ?></h2>
+                  <p><?php echo $key->isi_step ?></p>
                 </div>
               </div>
               <!-- TIPS -->
-              <div class="about-author d-flex p-4 bg-light ftco-animate">
-                <div class="bio d-flex align-items-center mr-4">
-                  <img src="<?php echo base_url('assets/images/idea.png')?>" alt="Image placeholder" class="img-fluid">
-                </div>
-                <div class="desc">
-                  <h3>For Your Information!</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus itaque, autem necessitatibus voluptate quod mollitia delectus aut, sunt placeat nam vero culpa sapiente consectetur similique, inventore eos fugit cupiditate numquam!</p>
-                  <h6>Farhan - Profesi</h6>
-                </div>
-              </div>
+              <?php
+                $tips = $key->id_tips;
+                if(isset($tips)){
+                  echo '<div class="about-author w-100 d-flex p-4 bg-light ftco-animate">';
+                  echo '<div class="bio d-flex align-items-center mr-4">';
+                  echo '<img src="'.base_url('assets/images/idea.png').'" alt="Image placeholder" class="p-4" style="width:150px;">';
+                  echo '</div>';
+                  echo '<div class="desc">';
+                  echo '<h3>For Your Information!</h3>';
+                  echo '<p>'.$key->isi_tips.'</p>';
+                  echo '<h6>'.$key->nama_pakar.' - '.$key->profesi_pakar.'</h6>';
+                  echo '</div></div>';
+                }
+              ?>
             </div>
-            <div class="row no-gutters mb-5">
-              <div class="col-md-6 p-md-5 img img-2 d-flex justify-content-center align-items-center" style="background-image: url(<?php echo base_url('assets/images/about.jpg')?>);">
-              </div>
-              <div class="col-md-6 wrap-about py-md-5 ftco-animate">
-                <div class="heading-section p-md-5">
-                  <h2 class="mb-4">3. Do It Again.</h2>
-                  <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-                </div>
-              </div>
-            </div>
+            <?php endforeach ?>
 
+          </div>
 
-          </div> <!-- .col-md-8 -->
+          <!-- .col-md-8 -->
           <div class="col-md-4 sidebar ftco-animate">
             <div class="sidebar-box">
               <form action="#" class="search-form">
@@ -146,50 +137,34 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
               </form>
             </div>
+
+            <!-- Categories -->
             <div class="sidebar-box ftco-animate">
               <div class="categories">
                 <h3>Categories</h3>
-                <li><a href="#">Jobs <span>(12)</span></a></li>
-                <li><a href="#">Visual Assistant <span>(22)</span></a></li>
-                <li><a href="#">Coffee <span>(37)</span></a></li>
-                <li><a href="#">Drinks <span>(42)</span></a></li>
-                <li><a href="#">Foods <span>(14)</span></a></li>
-                <li><a href="#">Travel <span>(140)</span></a></li>
+                <?php foreach ($category as $key): ?>
+                  <li><a href="<?php echo base_url('Category/show_categories_item/'.$key->id_kategori)?>"><?php echo $key->nama_kategori?> <span>(<?php echo $key->jumlah?>)</span></a></li>
+                <?php endforeach ?>
               </div>
             </div>
 
+            <!-- Recent Article -->
             <div class="sidebar-box ftco-animate">
               <h3>Recent Article</h3>
+
+              <?php foreach ($recent_artikel as $key): ?>
               <div class="block-21 mb-4 d-flex">
-                <a class="blog-img mr-4" style="background-image: url(<?php echo base_url('assets/images/image_1.jpg')?>);"></a>
+                <a class="blog-img mr-4" style="background-image: url(<?php echo base_url('assets/images/'.$key->gambar_artikel)?>);"></a>
                 <div class="text">
-                  <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
+                  <h3 class="heading"><a href="<?php echo base_url('Article/show_article/'.$key->id_artikel);?>"><?php echo $key->judul?></a></h3>
                   <div class="meta">
-                    <div><a href="#"><span class="icon-calendar"></span> July 12, 2018</a></div>
-                    <div><a href="#"><span class="icon-person"></span> Farhan Ichlasulamal</a></div>
+                    <div><span class="icon-calendar"></span> <?php echo date('j F Y H:i', strtotime($key->tanggal_artikel.' '.$key->waktu_artikel)).' WIB'; ?></div>
+                    <div><span class="icon-person"></span> <?php echo $key->nama ?></div>
                   </div>
                 </div>
               </div>
-              <div class="block-21 mb-4 d-flex">
-                <a class="blog-img mr-4" style="background-image: url(<?php echo base_url('assets/images/image_2.jpg')?>);"></a>
-                <div class="text">
-                  <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-                  <div class="meta">
-                    <div><a href="#"><span class="icon-calendar"></span> July 12, 2018</a></div>
-                    <div><a href="#"><span class="icon-person"></span> Farhan Ichlasulamal</a></div>
-                  </div>
-                </div>
-              </div>
-              <div class="block-21 mb-4 d-flex">
-                <a class="blog-img mr-4" style="background-image: url(<?php echo base_url('assets/images/image_3.jpg')?>);"></a>
-                <div class="text">
-                  <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-                  <div class="meta">
-                    <div><a href="#"><span class="icon-calendar"></span> July 12, 2018</a></div>
-                    <div><a href="#"><span class="icon-person"></span> Farhan Ichlasulamal</a></div>
-                  </div>
-                </div>
-              </div>
+              <?php endforeach ?>
+
             </div>
 
         </div>

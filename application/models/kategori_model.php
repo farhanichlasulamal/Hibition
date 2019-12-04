@@ -32,6 +32,15 @@ class Kategori_model extends CI_Model {
 		$this->db->where('id_kategori', $id);
 		return $this->db->get()->row();
 	}
+
+	public function getKategoriAndAmount(){
+		$this->db->select('kategori.*, COUNT(artikel.id_kategori_artikel) as jumlah');
+		$this->db->from('kategori');
+		$this->db->group_by('id_kategori');
+		$this->db->order_by('nama_kategori', 'ASC');
+		$this->db->join('artikel', 'artikel.id_kategori_artikel = kategori.id_kategori', 'left outer');
+		return $this->db->get()->result();
+	}
 }
 
 /* End of file artikel_model.php */
