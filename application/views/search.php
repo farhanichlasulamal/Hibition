@@ -33,77 +33,86 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     
 	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
-	      <a class="navbar-brand" href="index.html">H I B I T I O N</a>
+	      <a class="navbar-brand" href="<?php echo site_url('Home');?>">H I B I T I O N</a>
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="oi oi-menu"></span> Menu
 	      </button>
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-	          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-	          <li class="nav-item active"><a href="about.html" class="nav-link">About</a></li>
-	          <li class="nav-item"><a href="agent.html" class="nav-link">Agent</a></li>
-	          <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
-	          <li class="nav-item"><a href="properties.html" class="nav-link">Properties</a></li>
-	          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+            <li class="nav-item active"><a href="<?php echo site_url('Home');?>" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="<?php echo site_url('Category');?>" class="nav-link">Category</a></li>
+            <li class="nav-item"><a href="<?php echo site_url('About');?>" class="nav-link">About</a></li>
+            <li class="nav-item"><a href="<?php echo site_url('Contact');?>" class="nav-link">Contact</a></li>
 	        </ul>
 	      </div>
 	    </div>
 	  </nav>
     <!-- END nav -->
     
-    <section class="hero-wrap hero-wrap-2 ftco-degree-bg js-fullheight" style="background-image: url(<?php echo base_url('assets/images/bg_1.jpg')?>);" data-stellar-background-ratio="0.5">
+    <div class="hero-wrap ftco-degree-bg" style="background-image: url(<?php echo base_url('assets/images/bg_1.jpg')?>);" data-stellar-background-ratio="0.5">
       <div class="overlay"></div>
       <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
-          <div class="col-md-9 ftco-animate pb-5 text-center">
-          	<p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a></span> <span class="mr-2"><a href="#">Category <i class="ion-ios-arrow-forward"></i></a></span></p>
-            <h1 class="mb-3 bread">Menjalankan Gaya Hidup 'Eco-Friendly' di Kantor </h1>
+          <div class="col-md-9 ftco-animate pb-3 text-center">
+            <p class="breadcrumbs">
+              <span class="mr-2"><a href="<?php echo site_url('Home');?>">Home <i class="ion-ios-arrow-forward"></i></a></span>
+            </p>
+            <h1 class="mb-3 bread">Search</h1>
+            <form action="<?php echo site_url('Home/search');?>" id="formSearch" method="POST" class="search-location mt-md-5">
+              <div class="row justify-content-center">
+                <div class="col-lg-10 align-items-end">
+                  <div class="form-group">
+                    <div class="form-field">
+                      <input type="text" class="form-control" name="SearchBar" value="<?php echo $word;?>" placeholder="Search Trends">
+                      <button type="submit"><span class="ion-ios-search"></span></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
           </div>
         </div>
       </div>
-    </section>
-
-    <section class="ftco-section ftco-no-pb">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-md-8">
-            <div class="d-flex">
-              <div class="pr-2"><span class="icon icon-user"></span></div>
-              <div class="px-2">Farhan Ichlasulamal</div>
-              <div class="px-2">|</div>
-              <div class="px-2">Jumat, 2 April 1999 10.15 WIB</div>
-            </div>
-            <hr>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-		<section class="ftco-section">
-			<div class="container">
-        <div class="row justify-content-center mb-5">
-          <div class="col-md-7 text-center heading-section ftco-animate">
-            <span class="subheading">Tutorial</span>
-            <h2 class="mb-3">Step</h2>
-          </div>
-        </div>
-				<div class="row no-gutters">
-					<div class="col-md-6 p-md-5 img img-2 d-flex justify-content-center align-items-center" style="background-image: url(<?php echo base_url('assets/images/about.jpg')?>);">
-					</div>
-					<div class="col-md-6 wrap-about py-md-5 ftco-animate">
-	          <div class="heading-section p-md-5">
-	            <h2 class="mb-4">1. We Put People First.</h2>
-
-	            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-	            <p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country. But nothing the copy said could convince her and so it didn’t take long until a few insidious Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their agency, where they abused her for their.</p>
-	          </div>
-					</div>
-				</div>
+      <div class="mouse">
+				<a href="#" class="mouse-icon">
+					<div class="mouse-wheel"><span class="ion-ios-arrow-round-down"></span></div>
+				</a>
 			</div>
-		</section>
+    </div>
+
+    <section class="ftco-section goto-here">
+    	<div class="container">
+    		<div class="row justify-content-center">
+          <div class="col-md-12 heading-section text-center ftco-animate mb-5">
+          	<span class="subheading">Search</span>
+            <h2 class="mb-2">Search results for "<?php echo $word;?>"</h2>
+          </div>
+        </div>
+        <div class="row">
+
+          <?php foreach ($artikel as $key): ?>
+          <div class="col-md-4">
+            <div class="property-wrap ftco-animate">
+              <a href="<?php echo site_url('Article/show_article/'.$key->id_artikel);?>" class="img" style="background-image: url(<?php echo base_url('assets/images/'.$key->gambar_artikel)?>);"></a>
+              <div class="text">
+                <ul class="property_list">
+                  <li><small><span class="icon icon-user"></span><?php echo $key->nama ?></small></li>
+                  <li><small><span class="icon-calendar"></span><?php echo date('j F Y H:i', strtotime($key->tanggal_artikel." ".$key->waktu_artikel))." WIB"; ?></small></li>
+                </ul>
+                <h3><a href="<?php echo site_url('Article/show_article/'.$key->id_artikel);?>"><?php echo $key->judul ?></a></h3>
+                <span class="location"><?php echo $key->nama_kategori ?></span>
+                <a href="<?php echo site_url('Article/show_article/'.$key->id_artikel);?>" class="d-flex align-items-center justify-content-center btn-custom">
+                  <span class="ion-ios-link"></span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <?php endforeach ?>
+
+        </div>
+    	</div>
+    </section>
 
     <footer class="ftco-footer ftco-section">
       <div class="container">
@@ -167,9 +176,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="row">
           <div class="col-md-12 text-center">
 	
-            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+            <p>
+                Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved
+            </p>
           </div>
         </div>
       </div>

@@ -42,7 +42,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	        <ul class="navbar-nav ml-auto">
             <li class="nav-item active"><a href="#" class="nav-link">Home</a></li>
             <li class="nav-item"><a href="<?php echo site_url('Category');?>" class="nav-link">Category</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+            <li class="nav-item"><a href="<?php echo site_url('About');?>" class="nav-link">About</a></li>
             <li class="nav-item"><a href="<?php echo site_url('Contact');?>" class="nav-link">Contact</a></li>
 	        </ul>
 	      </div>
@@ -57,14 +57,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <div class="col-lg-8 col-md-6 ftco-animate d-flex align-items-end">
           	<div class="text text-center">
 	            <h1 class="mb-4">Discover <br>Who You Really Are</h1>
-	            <p style="font-size: 18px;">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts</p>
-	            <form action="#" class="search-location mt-md-5">
+	            <p style="font-size: 18px;">Kami akan membantumu menemukan berbagai hal menarik yang belum pernah kamu dapatkan sebelumnya. Cari di bawah ini!</p>
+	            <form action="<?php echo site_url('Home/search');?>" id="formSearch" method="POST" class="search-location mt-md-5">
 		        		<div class="row justify-content-center">
 		        			<div class="col-lg-10 align-items-end">
 		        				<div class="form-group">
 		          				<div class="form-field">
-				                <input type="text" class="form-control" placeholder="Search Trends">
-				                <button><span class="ion-ios-search"></span></button>
+				                <input type="text" class="form-control" name="SearchBar" placeholder="Search Trends">
+				                <button type="submit"><span class="ion-ios-search"></span></button>
 				              </div>
 			              </div>
 		        			</div>
@@ -123,7 +123,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             	<div class="icon d-flex justify-content-center align-items-center"><span class="flaticon-like"></span></div>
               <div class="media-body py-md-4">
                 <h3>Expert Advice</h3>
-                <p>Tersedia tips menarik dari para expert di bidangnya.</p>
+                <p>Tersedia tips menarik dari para expert di bidangnya untuk menambah wawasan tentang hal yang anda cari.</p>
               </div>
             </div>      
           </div>
@@ -161,6 +161,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           </div>
           <?php endforeach ?>
 
+        </div>
+        <div class="row justify-content-center align-items-center">
+          <div class="text text-center">
+            <a href="<?php echo site_url('Category/show_categories_item_all');?>">MORE <i class="ion-ios-arrow-forward"></i></a>
+          </div>
         </div>
     	</div>
     </section>
@@ -292,9 +297,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="row">
           <div class="col-md-12 text-center">
 	
-            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+            <p>
+                Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved
+            </p>
           </div>
         </div>
       </div>

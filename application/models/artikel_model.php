@@ -31,7 +31,16 @@ class Artikel_model extends CI_Model {
 
 	public function getArtikelByKategori($id_cat,$number,$offset){
 		$this->db->where('id_kategori_artikel', $id_cat);
+		$this->db->order_by("id_artikel", "desc");
 		$this->db->join('account', 'account.id_karyawan = artikel.id_penulis');
+		$this->db->join('kategori', 'kategori.id_kategori = artikel.id_kategori_artikel');
+		return $this->db->get('artikel',$number,$offset)->result();
+	}
+
+	public function getAllArtikel($number,$offset){
+		$this->db->order_by("id_artikel", "desc");
+		$this->db->join('account', 'account.id_karyawan = artikel.id_penulis');
+		$this->db->join('kategori', 'kategori.id_kategori = artikel.id_kategori_artikel');
 		return $this->db->get('artikel',$number,$offset)->result();
 	}
 
@@ -52,10 +61,24 @@ class Artikel_model extends CI_Model {
 		return $this->db->get()->result();
 	}
 
+	public function getArtikelByWord($word){
+		$this->db->from('artikel');
+		$this->db->like('judul', $word);
+		$this->db->like('ringkasan_artikel', $word);
+		$this->db->order_by("id_artikel", "desc");
+		$this->db->join('account', 'account.id_karyawan = artikel.id_penulis');
+		$this->db->join('kategori', 'kategori.id_kategori = artikel.id_kategori_artikel');
+		return $this->db->get()->result();
+	}
+
 	public function countArticle(){
 		return $this->db->get('artikel')->num_rows();
 	}
 
+	public function countArticleInCategory($id){
+		$this->db->where('id_kategori_artikel', $id);
+		return $this->db->get('artikel')->num_rows();
+	}
 }
 
 /* End of file artikel_model.php */

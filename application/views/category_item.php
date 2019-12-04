@@ -42,7 +42,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <ul class="navbar-nav ml-auto">
             <li class="nav-item"><a href="<?php echo site_url('Home');?>" class="nav-link">Home</a></li>
             <li class="nav-item active"><a href="<?php echo site_url('Category');?>" class="nav-link">Categories</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+            <li class="nav-item"><a href="<?php echo site_url('About');?>" class="nav-link">About</a></li>
             <li class="nav-item"><a href="<?php echo site_url('Contact');?>" class="nav-link">Contact</a></li>
           </ul>
         </div>
@@ -79,7 +79,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         					<li><small><span class="icon-calendar"></span><?php echo date('j F Y H:i', strtotime($key->tanggal_artikel." ".$key->waktu_artikel))." WIB"; ?></small></li>
         				</ul>
         				<h3><a href="<?php echo site_url('Article/show_article/'.$key->id_artikel);?>"><?php echo $key->judul ?></a></h3>
-        				<span class="location"><?php echo $category->nama_kategori ?></span>
+        				<span class="location"><?php echo $key->nama_kategori ?></span>
         				<a href="<?php echo site_url('Article/show_article/'.$key->id_artikel);?>" class="d-flex align-items-center justify-content-center btn-custom">
         					<span class="ion-ios-link"></span>
         				</a>
@@ -102,8 +102,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="row mb-5">
           <div class="col-md">
             <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Uptown</h2>
-              <p>Far far away, behind the word mountains, far from the countries.</p>
+              <h2 class="ftco-heading-2">H I B I T I O N</h2>
+              <p>HIBITION adalah sebuah wadah untuk anak urban Indonesia menemukan hobi dan gaya hidup yang sedang tren saat ini.</p>
               <ul class="ftco-footer-social list-unstyled mt-5">
                 <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
                 <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
@@ -159,9 +159,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="row">
           <div class="col-md-12 text-center">
 	
-            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+            <p>
+                Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved
+            </p>
           </div>
         </div>
       </div>

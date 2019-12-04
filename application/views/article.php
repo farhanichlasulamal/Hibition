@@ -42,7 +42,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	        <ul class="navbar-nav ml-auto">
 	          <li class="nav-item"><a href="<?php echo site_url('Home');?>" class="nav-link">Home</a></li>
             <li class="nav-item active"><a href="<?php echo site_url('Category');?>" class="nav-link">Categories</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+            <li class="nav-item"><a href="<?php echo site_url('About');?>" class="nav-link">About</a></li>
             <li class="nav-item"><a href="<?php echo site_url('Contact');?>" class="nav-link">Contact</a></li>
 	        </ul>
 	      </div>
@@ -142,6 +142,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="sidebar-box ftco-animate">
               <div class="categories">
                 <h3>Categories</h3>
+                  <li><a href="<?php echo base_url('Category/show_categories_item_all')?>">All <span>(<?php echo $all_category; ?>)</span></a></li>
                 <?php foreach ($category as $key): ?>
                   <li><a href="<?php echo base_url('Category/show_categories_item/'.$key->id_kategori)?>"><?php echo $key->nama_kategori?> <span>(<?php echo $key->jumlah?>)</span></a></li>
                 <?php endforeach ?>
@@ -235,9 +236,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="row">
           <div class="col-md-12 text-center">
 	
-            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+            <p>
+                Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved
+            </p>
           </div>
         </div>
       </div>

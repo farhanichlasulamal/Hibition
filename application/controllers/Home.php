@@ -10,10 +10,16 @@ class Home extends CI_Controller {
 		$this->load->model("kategori_model");
 	}
 
-	public function index()
-	{
+	public function index(){
 		$data['artikel'] = $this->artikel_model->getNewestArtikelandCategory(6);
 		$data['tips'] = $this->tips_model->getRecentTips(5);
 		$this->load->view('home',$data);
+	}
+
+	public function search(){
+		$word = $this->input->post('SearchBar');
+		$data['word'] = $word;
+		$data['artikel'] = $this->artikel_model->getArtikelByWord($word);
+		$this->load->view('search',$data);
 	}
 }
