@@ -8,9 +8,8 @@ class Login extends CI_Controller {
 		$this->load->model('account_model');
 	}
 
-	public function index()
-	{
-		
+	public function index() {
+		$this->load->view('login_page');
 	}
 
 	public function checkAccount() {

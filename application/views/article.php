@@ -130,10 +130,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <!-- .col-md-8 -->
           <div class="col-md-4 sidebar ftco-animate">
             <div class="sidebar-box">
-              <form action="#" class="search-form">
+              <form action="<?php echo site_url('Home/search');?>" id="formSearch" method="POST" class="search-form">
                 <div class="form-group">
                   <span class="icon icon-search"></span>
-                  <input type="text" class="form-control" placeholder="Type a keyword and hit enter">
+                  <input type="text" class="form-control" name="SearchBar" placeholder="Type a keyword and hit enter">
                 </div>
               </form>
             </div>
