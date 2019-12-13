@@ -28,6 +28,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link rel="stylesheet" href="<?php echo base_url('assets/css/flaticon.css')?>">
     <link rel="stylesheet" href="<?php echo base_url('assets/css/icomoon.css')?>">
     <link rel="stylesheet" href="<?php echo base_url('assets/css/style.css')?>">
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/style2.css')?>">
   </head>
   <body>
     
@@ -50,7 +51,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	  </nav>
     <!-- END nav -->
     
-    <section class="hero-wrap hero-wrap-2 ftco-degree-bg js-fullheight" style="background-image: url(<?php echo base_url('assets/images/'.$artikel->gambar_kategori)?>);" data-stellar-background-ratio="0.5">
+    <section class="hero-wrap hero-wrap-2 ftco-degree-bg js-fullheight" style="background-image: url(<?php echo base_url('assets/images/category/'.$artikel->gambar_kategori)?>);" data-stellar-background-ratio="0.5">
       <div class="overlay"></div>
       <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
@@ -87,8 +88,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <h2 class="mb-3"><?php echo $artikel->judul ?></h2>
             <p><?php echo $artikel->ringkasan_artikel ?></p>
             <p>
-              <img src="<?php echo base_url('assets/images/'.$artikel->gambar_artikel)?>" alt="" class="img-fluid">
+              <img src="<?php echo base_url('assets/images/article/'.$artikel->gambar_artikel)?>" alt="" class="img-fluid">
             </p>
+
+            <!-- ADS -->
+            <a href="https://mcdonalds.co.id/">
+              <img src="<?php echo base_url('assets/images/iklan_3.jpg');?>" width="100%" height="auto">
+            </a>
 
             <div class="row justify-content-center my-5">
               <div class="col-md-7 text-center heading-section ftco-animate">
@@ -99,7 +105,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
             <?php foreach ($step as $key): ?>
             <div class="row no-gutters mb-5">
-              <div class="col-md-6 p-md-5 img img-2 d-flex justify-content-center align-items-center" style="background-image: url(<?php echo base_url('assets/images/'.$key->gambar_step)?>);">
+              <div class="col-md-6 p-md-5 img img-2 d-flex justify-content-center align-items-center" style="background-image: url(<?php echo base_url('assets/images/article/'.$key->gambar_step)?>);">
               </div>
               <div class="col-md-6 wrap-about py-md-5 ftco-animate">
                 <div class="heading-section p-md-5">
@@ -124,6 +130,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               ?>
             </div>
             <?php endforeach ?>
+
+            <!-- ADS -->
+            <a href="https://mcdonalds.co.id/">
+              <img src="<?php echo base_url('assets/images/iklan_3.jpg');?>" width="100%" height="auto">
+            </a>
 
           </div>
 
@@ -155,7 +166,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
               <?php foreach ($recent_artikel as $key): ?>
               <div class="block-21 mb-4 d-flex">
-                <a class="blog-img mr-4" style="background-image: url(<?php echo base_url('assets/images/'.$key->gambar_artikel)?>);"></a>
+                <a class="blog-img mr-4" style="background-image: url(<?php echo base_url('assets/images/article/'.$key->gambar_artikel)?>);"></a>
                 <div class="text">
                   <h3 class="heading"><a href="<?php echo base_url('Article/show_article/'.$key->id_artikel);?>"><?php echo $key->judul?></a></h3>
                   <div class="meta">
@@ -168,6 +179,27 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
             </div>
 
+            <!-- ADS -->
+            <div class="sidebar-box ftco-animate mb-0">
+              <a href="https://mcdonalds.co.id/">
+                <img src="<?php echo base_url('assets/images/iklan_8.png');?>" width="100%">
+              </a>
+            </div>
+
+            <!-- ADS -->
+            <div class="sidebar-box ftco-animate mb-0">
+              <a href="https://mcdonalds.co.id/">
+                <img src="<?php echo base_url('assets/images/iklan_7.png');?>" width="100%">
+              </a>
+            </div>
+
+            <!-- ADS -->
+            <div class="sidebar-box ftco-animate mb-0">
+              <a href="https://www.coffeereview.com">
+                <img src="<?php echo base_url('assets/images/iklan_6.gif');?>" width="100%">
+              </a>
+            </div>
+            
         </div>
       </div>
     </section> <!-- .section -->
@@ -267,6 +299,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="<?php echo base_url('assets/js/google-map.js')?>"></script>
   <script src="<?php echo base_url('assets/js/main.js')?>"></script>
-    
+  <script src="<?php echo base_url('vendor/datatables/jquery.dataTables.js')?>"></script>
+  <script src="<?php echo base_url('vendor/datatables/dataTables.bootstrap4.js')?>"></script>
+  <script src="<?php echo base_url('assets/js/datatables-demo')?>"></script>
   </body>
 </html>

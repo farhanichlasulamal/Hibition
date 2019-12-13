@@ -28,6 +28,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link rel="stylesheet" href="<?php echo base_url('assets/css/flaticon.css')?>">
     <link rel="stylesheet" href="<?php echo base_url('assets/css/icomoon.css')?>">
     <link rel="stylesheet" href="<?php echo base_url('assets/css/style.css')?>">
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/style2.css')?>">
   </head>
   <body>
     
@@ -50,7 +51,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </nav>
     <!-- END nav -->
     
-    <section class="hero-wrap hero-wrap-2 ftco-degree-bg js-fullheight" style="background-image: url(<?php echo base_url('assets/images/'.$category->gambar_kategori)?>);" data-stellar-background-ratio="0.5">
+    <section class="hero-wrap hero-wrap-2 ftco-degree-bg js-fullheight" style="background-image: url(<?php echo base_url('assets/images/category/'.$category->gambar_kategori)?>);" data-stellar-background-ratio="0.5">
       <div class="overlay"></div>
       <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
@@ -72,7 +73,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <?php foreach ($item as $key): ?>
         	<div class="col-md-4">
         		<div class="property-wrap ftco-animate">
-        			<a href="<?php echo site_url('Article/show_article/'.$key->id_artikel);?>" class="img" style="background-image: url(<?php echo base_url('assets/images/'.$key->gambar_artikel)?>);"></a>
+        			<a href="<?php echo site_url('Article/show_article/'.$key->id_artikel);?>" class="img" style="background-image: url(<?php echo base_url('assets/images/article/'.$key->gambar_artikel)?>);"></a>
         			<div class="text">
         				<ul class="property_list">
         					<li><small><span class="icon icon-user"></span><?php echo $key->nama ?></small></li>
@@ -95,6 +96,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           </div>
         </div>
     	</div>
+    </section>
+
+    <!-- ADS -->
+    <section class="ftco-section">
+      <div class="container">
+        <a href="https://mcdonalds.co.id/">
+          <img src="<?php echo base_url('assets/images/iklan_3.jpg');?>" width="100%" height="auto">
+        </a>
+      </div>
     </section>
 
     <footer class="ftco-footer ftco-section">
@@ -190,6 +200,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="<?php echo base_url('assets/js/google-map.js')?>"></script>
   <script src="<?php echo base_url('assets/js/main.js')?>"></script>
-    
+  <script src="<?php echo base_url('vendor/datatables/jquery.dataTables.js')?>"></script>
+  <script src="<?php echo base_url('vendor/datatables/dataTables.bootstrap4.js')?>"></script>
+  <script src="<?php echo base_url('assets/js/datatables-demo')?>"></script>
   </body>
 </html>

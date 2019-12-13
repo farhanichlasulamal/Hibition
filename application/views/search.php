@@ -28,6 +28,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link rel="stylesheet" href="<?php echo base_url('assets/css/flaticon.css')?>">
     <link rel="stylesheet" href="<?php echo base_url('assets/css/icomoon.css')?>">
     <link rel="stylesheet" href="<?php echo base_url('assets/css/style.css')?>">
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/style2.css')?>">
   </head>
   <body>
     
@@ -112,6 +113,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
         </div>
     	</div>
+    </section>
+
+    <!-- ADS -->
+    <section class="ftco-section">
+      <div class="container">
+        <a href="https://mcdonalds.co.id/">
+          <img src="<?php echo base_url('assets/images/iklan_3.jpg');?>" width="100%" height="auto">
+        </a>
+      </div>
     </section>
 
     <footer class="ftco-footer ftco-section">
@@ -207,6 +217,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="<?php echo base_url('assets/js/google-map.js')?>"></script>
   <script src="<?php echo base_url('assets/js/main.js')?>"></script>
-    
+  <script src="<?php echo base_url('vendor/datatables/jquery.dataTables.js')?>"></script>
+  <script src="<?php echo base_url('vendor/datatables/dataTables.bootstrap4.js')?>"></script>
+  <script src="<?php echo base_url('assets/js/datatables-demo')?>"></script>
   </body>
 </html>

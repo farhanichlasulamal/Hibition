@@ -9,12 +9,16 @@ class Login extends CI_Controller {
 	}
 
 	public function index() {
-		$this->load->view('login_page');
+		if(!$this->session->logged_in){
+			$this->load->view('login_page');
+		} else {
+			redirect('Home');
+		}
 	}
 
 	public function checkAccount() {
-		$id = $this->security->xss_clean($this->input->post('id_karyawan'));
-  		$pass = $this->security->xss_clean($this->input->post('password'));
+		$id = $this->security->xss_clean($this->input->post('IdKaryawan'));
+  		$pass = $this->security->xss_clean($this->input->post('PasswordKaryawan'));
 		$result = $this->account_model->getAccount($id,$pass);
 
 		if (isset($result)) {
@@ -25,12 +29,12 @@ class Login extends CI_Controller {
 				'logged_in' => true
 			);
 			$this->session->set_userdata($sess);
-			redirect('Dashboard');
+			redirect('admin/Dashboard');
 		} else {
 			$this->session->set_flashdata("error", "Login tidak berhasil.");
-	  	$this->load->library('user_agent');
+	  		$this->load->library('user_agent');
 			$refer =  $this->agent->referrer();
-	    redirect($refer);
+	    	redirect($refer);
 		}
 	}
 

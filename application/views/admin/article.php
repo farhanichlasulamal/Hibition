@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
     <link rel="stylesheet" href="<?php echo base_url('assets/css/bootstrap-datepicker.css')?>">
     <link rel="stylesheet" href="<?php echo base_url('assets/css/jquery.timepicker.css')?>">
-
+    <link rel="stylesheet" href="<?php echo base_url('vendor/datatables/dataTables.bootstrap4.css')?>">
     
     <link rel="stylesheet" href="<?php echo base_url('assets/css/flaticon.css')?>">
     <link rel="stylesheet" href="<?php echo base_url('assets/css/icomoon.css')?>">
@@ -31,45 +31,50 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link rel="stylesheet" href="<?php echo base_url('assets/css/style2.css')?>">
   </head>
   <body>
-
-		<section class="ftco-section">
+    
+	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
       <div class="container">
-          <div class="col ftco-animate d-flex justify-content-center align-items-center">
-            <div class="text text-center">
-              <div class="card">
-                <div class="card-header">
-                  <h3 class="mb-0 p-2"><b>H I B I T I O N</b> <small>admin</small></h3>
-                </div>
-                <div class="card-body bg-primary">
-                  <?php
-                      $error = $this->session->flashdata('error'); 
-                      if(isset($error)){
-                        echo "<div class='alert alert-danger alert-dismissible fade show'><button type='button' class='close' data-dismiss='alert'>&times;</button>".$error."</div>";
-                      }
-                  ?>
-                  <form action="<?php echo site_url('Login/checkAccount');?>" id="formLogin" method="POST" class="search-location mt-md-4">
-                    <div class="form-group mb-4">
-                      <label for="inputID" class="text-white">ID Karyawan :</label>
-                      <div class="form-field">
-                        <input type="text" id="inputID" class="form-control border" name="IdKaryawan" placeholder="Type Here...">
-                      </div>
-                    </div>
-                    <div class="form-group  mb-4">
-                      <label for="inputPass" class="text-white">Password :</label>
-                      <div class="form-field">
-                        <input type="password" id="inputPass" class="form-control border" name="PasswordKaryawan" placeholder="Type Here...">
-                      </div>
-                    </div>
-                  </form>
-                  <div class="mt-4">
-                    <button type="submit" form="formLogin" class="btn btn-info">Login</button>
-                  </div>
-                </div>
-              </div>
-            </div>
+        <a class="navbar-brand" href="<?php echo site_url('Home');?>">H I B I T I O N</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="oi oi-menu"></span> Menu
+        </button>
+
+        <div class="collapse navbar-collapse" id="ftco-nav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a href="" class="nav-link"><?php echo $this->session->nama?></a></li>
+            <li class="nav-item">
+              <a href="<?php echo base_url('Login/logout');?>" class="nav-link">Logout</a>
+            </li>
+          </ul>
         </div>
       </div>
-    </section>
+    </nav>
+
+    <section class="ftco-section ftco-degree-bg">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 order-md-last ftco-animate">
+            <h2 class="mb-3">Hello, Article</h2>
+            <hr>
+            <div class="">
+              
+            </div>
+          </div>
+
+          <!-- .col-md-8 -->
+          <div class="col-md-4 sidebar ftco-animate">
+            <div class="sidebar-box ftco-animate">
+              <div class="categories">
+                <h3>Directories</h3>
+                <li><a href="<?php echo base_url('admin/dashboard')?>">Dashboard <span>></span></a></li>
+                <li><a href="<?php echo base_url('admin/Admin_Account')?>">Account <span>></span></a></li>
+                <li><a href="<?php echo base_url('admin/Admin_Category')?>">Category <span>></span></a></li>
+                <li><a href="">Article <span>></span></a></li>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> <!-- .section -->
 
     <footer class="ftco-footer ftco-section">
       <div class="container">
@@ -109,6 +114,5 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <script src="<?php echo base_url('vendor/datatables/jquery.dataTables.js')?>"></script>
   <script src="<?php echo base_url('vendor/datatables/dataTables.bootstrap4.js')?>"></script>
   <script src="<?php echo base_url('assets/js/datatables-demo')?>"></script>
-  
   </body>
 </html>

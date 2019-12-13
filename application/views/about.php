@@ -28,6 +28,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link rel="stylesheet" href="<?php echo base_url('assets/css/flaticon.css')?>">
     <link rel="stylesheet" href="<?php echo base_url('assets/css/icomoon.css')?>">
     <link rel="stylesheet" href="<?php echo base_url('assets/css/style.css')?>">
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/style2.css')?>">
   </head>
   <body>
     
@@ -80,6 +81,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- ADS -->
+    <section class="ftco-section">
+      <div class="container">
+        <a href="https://mcdonalds.co.id/">
+          <img src="<?php echo base_url('assets/images/iklan_3.jpg');?>" width="100%" height="auto">
+        </a>
       </div>
     </section>
 
@@ -145,9 +155,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="row">
           <div class="col-md-12 text-center">
 	
-            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+            <p>
+                Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved
+            </p>
           </div>
         </div>
       </div>
@@ -176,6 +186,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="<?php echo base_url('assets/js/google-map.js')?>"></script>
   <script src="<?php echo base_url('assets/js/main.js')?>"></script>
-    
+  <script src="<?php echo base_url('vendor/datatables/jquery.dataTables.js')?>"></script>
+  <script src="<?php echo base_url('vendor/datatables/dataTables.bootstrap4.js')?>"></script>
+  <script src="<?php echo base_url('assets/js/datatables-demo')?>"></script>
   </body>
 </html>

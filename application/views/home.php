@@ -28,6 +28,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link rel="stylesheet" href="<?php echo base_url('assets/css/flaticon.css')?>">
     <link rel="stylesheet" href="<?php echo base_url('assets/css/icomoon.css')?>">
     <link rel="stylesheet" href="<?php echo base_url('assets/css/style.css')?>">
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/style2.css')?>">
   </head>
   <body>
     
@@ -131,8 +132,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       </div>
     </section>
 
+    <!-- ADS -->
+    <section class="ftco-section ftco-no-pb">
+      <div class="container">
+        <a href="https://mcdonalds.co.id/">
+          <img src="<?php echo base_url('assets/images/iklan_1.jpg');?>" width="100%" height="auto">
+        </a>
+      </div>
+    </section>
+
     <!-- recent article -->
-    <section class="ftco-section goto-here">
+    <section class="ftco-section goto-here ftco-no-pb">
     	<div class="container">
     		<div class="row justify-content-center">
           <div class="col-md-12 heading-section text-center ftco-animate mb-5">
@@ -145,7 +155,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <?php foreach ($artikel as $key): ?>
           <div class="col-md-4">
             <div class="property-wrap ftco-animate">
-              <a href="<?php echo site_url('Article/show_article/'.$key->id_artikel);?>" class="img" style="background-image: url(<?php echo base_url('assets/images/'.$key->gambar_artikel)?>);"></a>
+              <a href="<?php echo site_url('Article/show_article/'.$key->id_artikel);?>" class="img" style="background-image: url(<?php echo base_url('assets/images/article/'.$key->gambar_artikel)?>);"></a>
               <div class="text">
                 <ul class="property_list">
                   <li><small><span class="icon icon-user"></span><?php echo $key->nama ?></small></li>
@@ -171,7 +181,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </section>
 
     <!-- total fitur -->
-    <section class="ftco-counter img" id="section-counter">
+    <section class="ftco-counter ftco-no-pb img" id="section-counter">
       <div class="container">
         <div class="row">
           <div class="col-md-12 col-lg-4 justify-content-center counter-wrap ftco-animate">
@@ -202,8 +212,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       </div>
     </section>
 
+    <!-- ADS -->
+    <section class="ftco-section ftco-no-pb">
+      <div class="container">
+        <a href="https://mcdonalds.co.id/">
+          <img src="<?php echo base_url('assets/images/iklan_1.jpg');?>" width="100%" height="auto">
+        </a>
+      </div>
+    </section>
+
     <!-- tips  -->
-    <section class="ftco-section testimony-section">
+    <section class="ftco-section testimony-section ftco-no-pb">
       <div class="container">
         <div class="row justify-content-center mb-5">
           <div class="col-md-7 text-center heading-section ftco-animate">
@@ -232,6 +251,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- ADS -->
+    <section class="ftco-section">
+      <div class="container">
+        <a href="https://mcdonalds.co.id/">
+          <img src="<?php echo base_url('assets/images/iklan_3.jpg');?>" width="100%" height="auto">
+        </a>
       </div>
     </section>
 
@@ -328,6 +356,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="<?php echo base_url('assets/js/google-map.js')?>"></script>
   <script src="<?php echo base_url('assets/js/main.js')?>"></script>
-    
+  <script src="<?php echo base_url('vendor/datatables/jquery.dataTables.js')?>"></script>
+  <script src="<?php echo base_url('vendor/datatables/dataTables.bootstrap4.js')?>"></script>
+  <script src="<?php echo base_url('assets/js/datatables-demo')?>"></script>
   </body>
 </html>

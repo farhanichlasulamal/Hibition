@@ -97,7 +97,7 @@ class Category extends CI_Controller {
 		$data['item'] = $this->artikel_model->getAllArtikel($config['per_page'],$from);
 		$data['category'] = (object) array(
 			'nama_kategori' => 'All Categories',
-		    'gambar_kategori' => 'team-4.jpg',
+		    'gambar_kategori' => 'all.jpg',
 		);
 		$data['pagination'] = $this->pagination->create_links();
 		$this->load->view('category_item', $data);
