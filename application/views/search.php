@@ -92,6 +92,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
         <div class="row">
 
+          <?php if ($artikel==NULL): ?>
+            <p>Your search - <b><?php echo $word;?></b> - did not match any documents.</p>
+          <?php else: ?>
           <?php foreach ($artikel as $key): ?>
           <div class="col-md-4">
             <div class="property-wrap ftco-animate">
@@ -110,6 +113,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
           </div>
           <?php endforeach ?>
+          <?php endif; ?>
 
         </div>
     	</div>

@@ -31,7 +31,6 @@ class Artikel_model extends CI_Model {
 
 	public function getArtikelByKategori($id_cat,$number,$offset){
 		$this->db->where('id_kategori_artikel', $id_cat);
-		$this->db->order_by("id_artikel", "desc");
 		$this->db->join('account', 'account.id_karyawan = artikel.id_penulis');
 		$this->db->join('kategori', 'kategori.id_kategori = artikel.id_kategori_artikel');
 		return $this->db->get('artikel',$number,$offset)->result();
@@ -47,7 +46,6 @@ class Artikel_model extends CI_Model {
 	public function getNewestArtikel($limit){
 		$this->db->from('artikel');
 		$this->db->limit($limit);
-		$this->db->order_by("id_artikel", "desc");
 		$this->db->join('account', 'account.id_karyawan = artikel.id_penulis');
 		return $this->db->get()->result();
 	}
@@ -55,7 +53,6 @@ class Artikel_model extends CI_Model {
 	public function getNewestArtikelandCategory($limit){
 		$this->db->from('artikel');
 		$this->db->limit($limit);
-		$this->db->order_by("id_artikel", "desc");
 		$this->db->join('account', 'account.id_karyawan = artikel.id_penulis');
 		$this->db->join('kategori', 'kategori.id_kategori = artikel.id_kategori_artikel');
 		return $this->db->get()->result();
@@ -65,7 +62,6 @@ class Artikel_model extends CI_Model {
 		$this->db->from('artikel');
 		$this->db->like('judul', $word);
 		$this->db->like('ringkasan_artikel', $word);
-		$this->db->order_by("id_artikel", "desc");
 		$this->db->join('account', 'account.id_karyawan = artikel.id_penulis');
 		$this->db->join('kategori', 'kategori.id_kategori = artikel.id_kategori_artikel');
 		return $this->db->get()->result();

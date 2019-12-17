@@ -54,40 +54,41 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <div class="container">
         <div class="row">
           <div class="col-md-8 order-md-last ftco-animate">
-            <!--
-            <ol class="breadcrumb mt-4">
-              <li class="breadcrumb-item">Dashboard</li>
-            </ol>
-            -->
-
             <h2 class="mb-3">Category</h2>
             <hr>
+
+            <?php
+              $error = $this->session->flashdata('error'); 
+              if(isset($error)){
+                echo "<div class='alert alert-danger alert-dismissible fade show'><button type='button' class='close' data-dismiss='alert'>&times;</button>".$error."</div>";
+              }
+              $success = $this->session->flashdata('success');
+              if(isset($success)){
+                echo "<div class='alert alert-success alert-dismissible fade show'><button type='button' class='close' data-dismiss='alert'>&times;</button>".$success."</div>";
+              }
+            ?>
+
             <div class="table-responsive">
               <table class="table table-condensed table-striped table-hover table-bordered text-center" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                   <tr>
                     <th class="align-middle" style="max-width: 30px;">NO.</th>
-                    <th class="align-middle">NAMA</th>
-                    <th class="align-middle">NIP</th>
-                    <th class="align-middle">JABATAN</th>
-                    <th class="align-middle">DIVISI</th>
-                    <th class="align-middle" style="max-width: 50px;">AKSI</th>
+                    <th class="align-middle">NAME</th>
+                    <th class="align-middle">IMAGE</th>
+                    <th class="align-middle" style="max-width: 50px;">ACTION</th>
                   </tr>
                 </thead>
                 <tbody>
                   <?php $no = 1;
-                  foreach ($emp as $row): ?>
+                  foreach ($item as $row): ?>
                   <tr>
                     <td><?php echo $no."."?></td>
-                    <td class="text-left"><?php echo $row->nama; ?></td>
-                    <td><?php echo $row->nip; ?></td>
-                    <td class="text-left"><?php echo $row->jabatan." ".$row->deskripsi_jabatan; ?></td>
-                    <td><?php echo $row->nama_divisi; ?></td>
+                    <td class="text-left"><?php echo $row->nama_kategori; ?></td>
+                    <td><img src="<?php echo base_url('assets/images/category/'.$row->gambar_kategori);?>" alt="<?php echo $row->nama_kategori;?>" height="100" width="auto"></td>
                     <td>
                       <div class="d-flex justify-content-center">
-                        <button class="btn btn-info btn-sm mx-1" id="modalViewTrigger" value="<?php echo $row->nip?>" style="min-width: 20px;" title="View"><i class="far fa-eye fa-fw"></i></button>
-                        <button class="btn btn-warning btn-sm text-white mx-1" id="modalUpdateTrigger" value="<?php echo $row->nip?>" style="min-width: 20px;" title="Update"><i class="far fa-edit fa-fw"></i></button>
-                        <button class="btn btn-danger btn-sm mx-1" id="modalDeleteTrigger" value="<?php echo $row->nip?>" style="min-width: 20px;" title="Delete"><i class="fas fa-trash-alt fa-fw"></i></button>
+                        <button class="btn btn-warning btn-sm text-white mx-1" id="modalUpdateTrigger" value="<?php echo $row->id_kategori?>" style="min-width: 20px;" title="Update"><i class="far fa-edit fa-fw"></i></button>
+                        <button class="btn btn-danger btn-sm mx-1" id="modalDeleteTrigger" value="<?php echo $row->id_kategori?>" style="min-width: 20px;" title="Delete"><i class="fas fa-trash-alt fa-fw"></i></button>
                       </div>
                     </td>
                   </tr>
@@ -105,13 +106,76 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <h3>Directories</h3>
                 <li><a href="<?php echo base_url('admin/dashboard')?>">Dashboard <span>></span></a></li>
                 <li><a href="<?php echo base_url('admin/Admin_Account')?>">Account <span>></span></a></li>
-                <li><a href="">Category <span>></span></a></li>
+                <li class="active"><a href="">Category <span>></span></a></li>
                 <li><a href="<?php echo base_url('admin/Admin_Article')?>">Article <span>></span></a></li>
             </div>
           </div>
         </div>
       </div>
     </section> <!-- .section -->
+
+    <!-- Modal Update -->
+    <div class="modal fade" id="modalUpdate">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title">Update Data</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          
+          <!-- Modal body -->
+          <div class="modal-body">
+            <form action="<?php echo base_url('Admin_Category/updateCategory');?>" method="post" id="formUpdate">
+              <div class="form-group">
+                <label for="updateNama" class="control-label mr-3">Category Name :</label>
+                <input type="text" class="form-control" id="updateNama" name="nama" required>
+              </div>
+              <div class="form-group">
+                <label for="updateGambar" class="control-label mr-3">Category Image :</label>
+                <input type="file" class="form-control" id="updateGambar" name="gambar" required>
+              </div>
+              <input type="text" id="updateId" name="id" style="display: none;">
+            </form>
+          </div>
+          
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            <button type="submit" class="btn btn-primary" form="formUpdate">Save</button>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Modal Delete -->
+    <div class="modal fade" id="modalDelete">
+      <div class="modal-dialog modal-dialog-centered modal-sm">
+        <div class="modal-content">
+
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title">Delete Data</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          
+          <!-- Modal body -->
+          <div class="modal-body">
+            <p>Are you sure you want to delete this category?</p>
+          </div>
+          
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary" id="modalDeleteTriggerYes" style="min-width: 60px;">Yes</button>
+          </div>
+          
+        </div>
+      </div>
+    </div>
 
     <footer class="ftco-footer ftco-section">
       <div class="container">
@@ -150,6 +214,55 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <script src="<?php echo base_url('assets/js/main.js')?>"></script>
   <script src="<?php echo base_url('vendor/datatables/jquery.dataTables.js')?>"></script>
   <script src="<?php echo base_url('vendor/datatables/dataTables.bootstrap4.js')?>"></script>
-  <script src="<?php echo base_url('assets/js/datatables-demo')?>"></script>
+  <script src="<?php echo base_url('assets/js/datatables-demo.js')?>"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      //modal update
+      $(document).on('click', '#modalUpdateTrigger', function(){ 
+        var id = $(this).val();
+        $.ajax({
+          url : "<?php echo base_url('Division/getDivision');?>",
+          method : "POST",
+          data : {id: id},
+          async : false,
+          dataType : 'json',
+          success: function(data){
+            $('#updateNama').val(data['nama_kategori']);
+            $('#updateGambar').val(data['gambar_kategori']);
+            $('#updateId').val(data['id_kategori']);
+            $('#modalUpdate').modal('show');
+          },
+          error: function(){
+            alert('Process Failed');
+          }
+        });
+      });
+
+      //modal delete
+      $(document).on('click', '#modalDeleteTrigger', function(){ 
+        $('#modalDelete').modal('show');
+        var id = $(this).val();
+        $(document).on('click', '#modalDeleteTriggerYes', function(){ 
+          $.ajax({
+            url : "<?php echo base_url('Admin_Category/deleteCategory');?>",
+            method : "POST",
+            data : {id: id},
+            async : false,
+            dataType : 'json',
+            success: function(data){
+              $('#modalDelete').modal('hide');
+              location.reload();     
+            },
+            error: function(){
+              alert('Process Failed');
+            }
+          });
+        });
+      });
+
+    });
+  </script>
+
   </body>
 </html>

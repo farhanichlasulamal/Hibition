@@ -33,6 +33,12 @@ class Kategori_model extends CI_Model {
 		return $this->db->get()->row();
 	}
 
+	public function getKategoriByIdArray($id){
+		$this->db->from('kategori');
+		$this->db->where('id_kategori', $id);
+		return $this->db->get()->row_array();
+	}
+
 	public function getKategoriAndAmount(){
 		$this->db->select('kategori.*, COUNT(artikel.id_kategori_artikel) as jumlah');
 		$this->db->from('kategori');
@@ -41,6 +47,12 @@ class Kategori_model extends CI_Model {
 		$this->db->join('artikel', 'artikel.id_kategori_artikel = kategori.id_kategori', 'left outer');
 		return $this->db->get()->result();
 	}
+
+	public function getKategoriForAdmin(){
+		$this->db->from('kategori');
+		return $this->db->get()->result();
+	}
+
 }
 
 /* End of file artikel_model.php */

@@ -67,7 +67,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               <div class="categories">
                 <h3>Directories</h3>
                 <li><a href="<?php echo base_url('admin/dashboard')?>">Dashboard <span>></span></a></li>
-                <li><a href="">Account <span>></span></a></li>
+                <li class="active"><a href="">Account <span>></span></a></li>
                 <li><a href="<?php echo base_url('admin/Admin_Category')?>">Category <span>></span></a></li>
                 <li><a href="<?php echo base_url('admin/Admin_Article')?>">Article <span>></span></a></li>
             </div>

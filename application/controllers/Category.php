@@ -102,6 +102,7 @@ class Category extends CI_Controller {
 		$data['pagination'] = $this->pagination->create_links();
 		$this->load->view('category_item', $data);
 	}
+	
 }
 
 /* End of file Category.php */

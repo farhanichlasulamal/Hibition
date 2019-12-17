@@ -66,7 +66,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="sidebar-box ftco-animate">
               <div class="categories">
                 <h3>Directories</h3>
-                <li><a href="">Dashboard <span>></span></a></li>
+                <li class="active"><a href="">Dashboard <span>></span></a></li>
                 <li><a href="<?php echo base_url('admin/Admin_Account')?>">Account <span>></span></a></li>
                 <li><a href="<?php echo base_url('admin/Admin_Category')?>">Category <span>></span></a></li>
                 <li><a href="<?php echo base_url('admin/Admin_Article')?>">Article <span>></span></a></li>
