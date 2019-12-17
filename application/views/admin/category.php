@@ -222,7 +222,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       $(document).on('click', '#modalUpdateTrigger', function(){ 
         var id = $(this).val();
         $.ajax({
-          url : "<?php echo base_url('Division/getDivision');?>",
+          url : "<?php echo base_url('admin/Admin_Category/getCategory');?>",
           method : "POST",
           data : {id: id},
           async : false,

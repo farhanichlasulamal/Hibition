@@ -27,44 +27,32 @@ class Admin_Category extends CI_Controller {
 	}
 
 	public function updateCategory(){
-	    $data = array(
-	      'id_divisi' => $this->input->post('id');
-	      'nama_divisi' => $this->input->post('nama'),
-	      'gambar_kategori'
-	    );
+		$config['upload_path'] = './assets/images/category/';
+		$config['allowed_types'] = 'gif|jpg|png|jpeg|JPG';
+		$config['max_size']  = '4096';
+		$config['max_width']  = '2000';
+		$config['max_height']  = '2000';
 
-	    $this->kategori_model->update($id, $data);
-	    $this->session->set_flashdata('success', "<strong>Success!</strong> Data berhasil diperbarui.");
-	    $this->load->library('user_agent');
-	    $refer =  $this->agent->referrer();
-	    redirect($refer);
-
-
-
-	    $config['upload_path'] = './assets/img/';
-		$config['allowed_types'] = 'gif|jpg|png';
-		$config['max_size']  = '2048';
-		$config['max_width']  = '1500';
-		$config['max_height']  = '1500';
-		
 		$this->load->library('upload', $config);
-		
+
 		if ( ! $this->upload->do_upload('Gambar')){
-			$error = array('error' => $this->upload->display_errors());
+			$this->session->set_flashdata('error', "<strong>Failed!</strong> Data gagal diperbarui. ".$this->upload->display_errors());
 		}
 		else{
 			$data = array('upload_data' => $this->upload->data());
-			echo "<script>alert('upload berhasil!');</script>";
 			$file_info = $this->upload->data();
 			$img = $file_info['file_name']; 
 			$data = array(
-				'namamenu' => $this->input->post('NamaMenu'),
-				'harga' => $this->input->post('Harga'),
-				'jenis' => $this->input->post('JenisMenu'),
-				'gambar' => $img
+			    'nama_divisi' => $this->input->post('nama'),
+			    'gambar_kategori' => $img
 			);
-			$this->toko_model->insertMenu($this->session->tenantid,$data);
+			$this->kategori_model->update($this->input->post('id'),$data);
+			$this->session->set_flashdata('success', "<strong>Success!</strong> Data berhasil diperbarui.");
 		}
+	    
+	    $this->load->library('user_agent');
+	    $refer =  $this->agent->referrer();
+	    redirect($refer);	
 	}
 
 	public function getCategory(){
