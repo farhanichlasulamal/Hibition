@@ -54,7 +54,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <div class="container">
         <div class="row">
           <div class="col-md-8 order-md-last ftco-animate">
-            <h2 class="mb-3">Category</h2>
+            <h2 class="mb-3">Advertisement</h2>
             <hr>
 
             <?php
@@ -74,28 +74,26 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               <table class="table table-condensed table-striped table-hover table-bordered text-center" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                   <tr>
-                    <th class="align-middle" style="max-width: 30px;">NO.</th>
-                    <th class="align-middle">NAME</th>
+                    <th class="align-middle">PRIORITY</th>
                     <th class="align-middle">IMAGE</th>
+                    <th class="align-middle">LINK</th>
                     <th class="align-middle" style="max-width: 50px;">ACTION</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <?php $no = 1;
-                  foreach ($item as $row): ?>
+                  <?php foreach ($item as $row): ?>
                   <tr>
-                    <td><?php echo $no."."?></td>
-                    <td class="text-left"><?php echo $row->nama_kategori; ?></td>
-                    <td><img src="<?php echo base_url('assets/images/category/'.$row->gambar_kategori);?>" alt="<?php echo $row->nama_kategori;?>" height="100" width="auto"></td>
+                    <td class="text-center"><?php echo $row->prioritas; ?></td>
+                    <td><img src="<?php echo base_url('assets/images/ads/'.$row->gambar_ads);?>" alt="<?php echo $row->link_ads;?>" width="100" width="auto"></td>
+                    <td class="text-left"><?php echo $row->link_ads; ?></td>
                     <td>
                       <div class="d-flex justify-content-center">
-                        <button class="btn btn-warning btn-sm text-white mx-1" id="modalUpdateTrigger" value="<?php echo $row->id_kategori?>" style="min-width: 50px;" title="Update"><i class="icon ion-md-create"></i></button>
-                        <button class="btn btn-danger btn-sm mx-1" id="modalDeleteTrigger" value="<?php echo $row->id_kategori?>" style="min-width: 50px;" title="Delete"><i class="icon ion-md-trash"></i></button>
+                        <button class="btn btn-warning btn-sm text-white mx-1" id="modalUpdateTrigger" value="<?php echo $row->id_ads?>" style="min-width: 50px;" title="Update"><i class="icon ion-md-create"></i></button>
+                        <button class="btn btn-danger btn-sm mx-1" id="modalDeleteTrigger" value="<?php echo $row->id_ads?>" style="min-width: 50px;" title="Delete"><i class="icon ion-md-trash"></i></button>
                       </div>
                     </td>
                   </tr>
-                  <?php $no++; 
-                  endforeach ?>
+                  <?php endforeach ?>
                 </tbody>
               </table>
             </div>
@@ -108,9 +106,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <h3>Directories</h3>
                 <li><a href="<?php echo base_url('admin/dashboard')?>">Dashboard <span>></span></a></li>
                 <li><a href="<?php echo base_url('admin/Admin_Account')?>">Account <span>></span></a></li>
-                <li class="active"><a href="">Category <span>></span></a></li>
+                <li><a href="<?php echo base_url('admin/Admin_Category')?>">Category <span>></span></a></li>
                 <li><a href="<?php echo base_url('admin/Admin_Article')?>">Article <span>></span></a></li>
-                <li><a href="<?php echo base_url('admin/Admin_Ads')?>">Ads <span>></span></a></li>
+                <li class="active"><a href="">Ads <span>></span></a></li>
             </div>
           </div>
         </div>
@@ -130,13 +128,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           
           <!-- Modal body -->
           <div class="modal-body">
-            <?php echo form_open_multipart('admin/Admin_Category/insertCategory', 'id="formInsert"');?>
+            <?php echo form_open_multipart('admin/Ads/insertAds', 'id="formInsert"');?>
               <div class="form-group">
-                <label for="insertNama" class="control-label mr-3">Category Name :</label>
-                <input type="text" class="form-control" id="insertNama" name="nama" placeholder="Name" required>
+                <label for="insertPrioritas" class="control-label mr-3">Priority Number :</label>
+                <input type="text" class="form-control" id="insertPrioritas" name="prioritas" placeholder="Priority" required>
               </div>
               <div class="form-group">
-                <label for="insertGambar" class="control-label mr-3">Category Image :</label>
+                <label for="insertLink" class="control-label mr-3">Ads Link :</label>
+                <input type="text" class="form-control" id="insertLink" name="link" placeholder="Link" required>
+              </div>
+              <div class="form-group">
+                <label for="insertGambar" class="control-label mr-3">Ads Image :</label>
                 <input type="file" class="form-control" id="insertGambar" name="gambar" required>
               </div>
             <?php echo form_close();?>
@@ -165,14 +167,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           
           <!-- Modal body -->
           <div class="modal-body">
-            <?php echo form_open_multipart('admin/Admin_Category/updateCategory', 'id="formUpdate"');?>
+            <?php echo form_open_multipart('admin/Ads/updateAds', 'id="formUpdate"');?>
               <div class="form-group">
-                <label for="updateNama" class="control-label mr-3">Category Name :</label>
-                <input type="text" class="form-control" id="updateNama" name="nama" required>
+                <label for="updatePrioritas" class="control-label mr-3">Priority Number :</label>
+                <input type="text" class="form-control" id="updatePrioritas" name="prioritas" required>
               </div>
               <div class="form-group">
-                <label for="updateGambar" class="control-label mr-3">Category Image :</label>
-                <input type="file" class="form-control" id="updateGambar" name="gambar">
+                <label for="updateLink" class="control-label mr-3">Ads Link :</label>
+                <input type="text" class="form-control" id="updateLink" name="link" required>
+              </div>
+              <div class="form-group">
+                <label for="updateGambar" class="control-label mr-3">Ads Image :</label>
+                <input type="file" class="form-control" id="updateGambar" name="gambar" required>
               </div>
               <input type="text" id="updateId" name="id" style="display: none;">
             <?php echo form_close();?>
@@ -202,7 +208,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           
           <!-- Modal body -->
           <div class="modal-body">
-            <p>Are you sure you want to delete this category?</p>
+            <p>Are you sure you want to delete this Ads?</p>
           </div>
           
           <!-- Modal footer -->
@@ -260,14 +266,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       $(document).on('click', '#modalUpdateTrigger', function(){ 
         var id = $(this).val();
         $.ajax({
-          url : "<?php echo base_url('admin/Admin_Category/getCategory');?>",
+          url : "<?php echo base_url('admin/Admin_Ads/getAds');?>",
           method : "POST",
           data : {id: id},
           async : false,
           dataType : 'json',
           success: function(data){
-            $('#updateNama').val(data['nama_kategori']);
-            $('#updateId').val(data['id_kategori']);
+            $('#updatePrioritas').val(data['prioritas']);
+            $('#updateLink').val(data['link_ads']);
             $('#modalUpdate').modal('show');
           },
           error: function(){
@@ -282,7 +288,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         var id = $(this).val();
         $(document).on('click', '#modalDeleteTriggerYes', function(){ 
           $.ajax({
-            url : "<?php echo base_url('admin/Admin_Category/deleteCategory');?>",
+            url : "<?php echo base_url('admin/Admin_Ads/deleteAds');?>",
             method : "POST",
             data : {id: id},
             async : false,

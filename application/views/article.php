@@ -92,8 +92,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </p>
 
             <!-- ADS -->
-            <a href="https://mcdonalds.co.id/">
-              <img src="<?php echo base_url('assets/images/iklan_3.jpg');?>" width="100%" height="auto">
+            <a href="<?php echo $ads2->link_ads;?>">
+              <img src="<?php echo base_url('assets/images/'.$ads2->gambar_ads);?>" width="100%" height="auto">
             </a>
 
             <div class="row justify-content-center my-5">
@@ -132,8 +132,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <?php endforeach ?>
 
             <!-- ADS -->
-            <a href="https://mcdonalds.co.id/">
-              <img src="<?php echo base_url('assets/images/iklan_3.jpg');?>" width="100%" height="auto">
+            <a href="<?php echo $ads2->link_ads;?>">
+              <img src="<?php echo base_url('assets/images/'.$ads2->gambar_ads);?>" width="100%" height="auto">
             </a>
 
           </div>
@@ -181,22 +181,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
             <!-- ADS -->
             <div class="sidebar-box ftco-animate mb-0">
-              <a href="https://mcdonalds.co.id/">
-                <img src="<?php echo base_url('assets/images/iklan_8.png');?>" width="100%">
+              <a href="<?php echo $ads3->link_ads;?>">
+                <img src="<?php echo base_url('assets/images/'.$ads3->gambar_ads);?>" width="100%" height="auto">
               </a>
             </div>
 
             <!-- ADS -->
             <div class="sidebar-box ftco-animate mb-0">
-              <a href="https://mcdonalds.co.id/">
-                <img src="<?php echo base_url('assets/images/iklan_7.png');?>" width="100%">
+              <a href="<?php echo $ads4->link_ads;?>">
+                <img src="<?php echo base_url('assets/images/'.$ads4->gambar_ads);?>" width="100%" height="auto">
               </a>
             </div>
 
             <!-- ADS -->
             <div class="sidebar-box ftco-animate mb-0">
-              <a href="https://www.coffeereview.com">
-                <img src="<?php echo base_url('assets/images/iklan_6.gif');?>" width="100%">
+              <a href="<?php echo $ads5->link_ads;?>">
+                <img src="<?php echo base_url('assets/images/'.$ads5->gambar_ads);?>" width="100%" height="auto">
               </a>
             </div>
             

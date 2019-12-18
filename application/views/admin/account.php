@@ -54,7 +54,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <div class="container">
         <div class="row">
           <div class="col-md-8 order-md-last ftco-animate">
-            <h2 class="mb-3">Hello, Account</h2>
+            <h2 class="mb-3">User Account</h2>
             <hr>
             <div class="">
               
@@ -70,6 +70,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <li class="active"><a href="">Account <span>></span></a></li>
                 <li><a href="<?php echo base_url('admin/Admin_Category')?>">Category <span>></span></a></li>
                 <li><a href="<?php echo base_url('admin/Admin_Article')?>">Article <span>></span></a></li>
+                <li><a href="<?php echo base_url('admin/Admin_Ads')?>">Ads <span>></span></a></li>
             </div>
           </div>
         </div>

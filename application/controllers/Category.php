@@ -8,6 +8,7 @@ class Category extends CI_Controller {
 		$this->load->helper(array('url'));
 		$this->load->model("kategori_model");
 		$this->load->model("artikel_model");
+		$this->load->model("ads_model");
 	}
 
 	public function index()
@@ -17,6 +18,7 @@ class Category extends CI_Controller {
 
 	public function show_categories(){
 		$data['item'] = $this->kategori_model->getKategori();
+		$data['ads2'] = $this->ads_model->getAdsByPriority(2);
 		$this->load->view('category', $data);
 	}
 
@@ -57,6 +59,7 @@ class Category extends CI_Controller {
 		$data['item'] = $this->artikel_model->getArtikelByKategori($id,$config['per_page'],$from);
 		$data['category'] = $this->kategori_model->getKategoriById($id);
 		$data['pagination'] = $this->pagination->create_links();
+		$data['ads2'] = $this->ads_model->getAdsByPriority(2);
 		$this->load->view('category_item', $data);
 	}
 
@@ -100,6 +103,7 @@ class Category extends CI_Controller {
 		    'gambar_kategori' => 'all.jpg',
 		);
 		$data['pagination'] = $this->pagination->create_links();
+		$data['ads2'] = $this->ads_model->getAdsByPriority(2);
 		$this->load->view('category_item', $data);
 	}
 	

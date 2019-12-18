@@ -5,10 +5,12 @@ class About extends CI_Controller {
 
 	public function __construct(){
 		parent::__construct();
+		$this->load->model("ads_model");
 	}
 
 	public function index(){
-		$this->load->view('about');
+		$data['ads2'] = $this->ads_model->getAdsByPriority(2);
+		$this->load->view('about', $data);
 	}
 
 }

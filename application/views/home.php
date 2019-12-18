@@ -135,8 +135,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <!-- ADS -->
     <section class="ftco-section ftco-no-pb">
       <div class="container">
-        <a href="https://mcdonalds.co.id/">
-          <img src="<?php echo base_url('assets/images/iklan_1.jpg');?>" width="100%" height="auto">
+        <a href="<?php echo $ads1->link_ads;?>">
+          <img src="<?php echo base_url('assets/images/'.$ads1->gambar_ads);?>" width="100%" height="auto">
         </a>
       </div>
     </section>
@@ -215,8 +215,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <!-- ADS -->
     <section class="ftco-section ftco-no-pb">
       <div class="container">
-        <a href="https://mcdonalds.co.id/">
-          <img src="<?php echo base_url('assets/images/iklan_1.jpg');?>" width="100%" height="auto">
+        <a href="<?php echo $ads1->link_ads;?>">
+          <img src="<?php echo base_url('assets/images/'.$ads1->gambar_ads);?>" width="100%" height="auto">
         </a>
       </div>
     </section>
@@ -257,8 +257,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <!-- ADS -->
     <section class="ftco-section">
       <div class="container">
-        <a href="https://mcdonalds.co.id/">
-          <img src="<?php echo base_url('assets/images/iklan_3.jpg');?>" width="100%" height="auto">
+        <a href="<?php echo $ads2->link_ads;?>">
+          <img src="<?php echo base_url('assets/images/'.$ads2->gambar_ads);?>" width="100%" height="auto">
         </a>
       </div>
     </section>
