@@ -33,6 +33,7 @@ class Artikel_model extends CI_Model {
 		$this->db->where('id_kategori_artikel', $id_cat);
 		$this->db->join('account', 'account.id_karyawan = artikel.id_penulis');
 		$this->db->join('kategori', 'kategori.id_kategori = artikel.id_kategori_artikel');
+		$this->db->order_by('id_artikel', 'DESC');
 		return $this->db->get('artikel',$number,$offset)->result();
 	}
 
@@ -40,6 +41,7 @@ class Artikel_model extends CI_Model {
 		$this->db->order_by("id_artikel", "desc");
 		$this->db->join('account', 'account.id_karyawan = artikel.id_penulis');
 		$this->db->join('kategori', 'kategori.id_kategori = artikel.id_kategori_artikel');
+		$this->db->order_by('id_artikel', 'DESC');
 		return $this->db->get('artikel',$number,$offset)->result();
 	}
 
@@ -47,6 +49,7 @@ class Artikel_model extends CI_Model {
 		$this->db->from('artikel');
 		$this->db->limit($limit);
 		$this->db->join('account', 'account.id_karyawan = artikel.id_penulis');
+		$this->db->order_by('id_artikel', 'DESC');
 		return $this->db->get()->result();
 	}
 
@@ -55,6 +58,7 @@ class Artikel_model extends CI_Model {
 		$this->db->limit($limit);
 		$this->db->join('account', 'account.id_karyawan = artikel.id_penulis');
 		$this->db->join('kategori', 'kategori.id_kategori = artikel.id_kategori_artikel');
+		$this->db->order_by('id_artikel', 'DESC');
 		return $this->db->get()->result();
 	}
 
@@ -64,6 +68,7 @@ class Artikel_model extends CI_Model {
 		$this->db->like('ringkasan_artikel', $word);
 		$this->db->join('account', 'account.id_karyawan = artikel.id_penulis');
 		$this->db->join('kategori', 'kategori.id_kategori = artikel.id_kategori_artikel');
+		$this->db->order_by('id_artikel', 'DESC');
 		return $this->db->get()->result();
 	}
 

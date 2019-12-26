@@ -13,7 +13,11 @@ class Category extends CI_Controller {
 
 	public function index()
 	{
-		$this->show_categories();
+		if(!$this->session->hibition_logged_in){
+			$this->show_categories();
+		} else {
+			redirect('admin/Dashboard');
+		}
 	}
 
 	public function show_categories(){

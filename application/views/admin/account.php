@@ -41,7 +41,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
         <div class="collapse navbar-collapse" id="ftco-nav">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item"><a href="" class="nav-link"><?php echo $this->session->nama?></a></li>
+            <li class="nav-item"><a href="" class="nav-link"><?php echo $this->session->hibition_nama?></a></li>
             <li class="nav-item">
               <a href="<?php echo base_url('Login/logout');?>" class="nav-link">Logout</a>
             </li>

@@ -89,21 +89,29 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		        </div>
           </div>
         </div>
+
+        <!-- ADS -->
+        <div class="row mb-5">
+          <a href="<?php echo $ads1->link_ads;?>">
+            <img src="<?php echo base_url('assets/images/'.$ads1->gambar_ads);?>" width="100%" height="auto">
+          </a>
+        </div>
+        
         <div class="row block-9 justify-content-center mb-5">
           <div class="col-md-8 mb-md-5">
           	<h2 class="text-center">If you want your AD to appear on this site <br>Contact us by filling out the message below</h2>
-            <form action="#" class="bg-light p-5 contact-form">
+            <form action="<?php echo base_url('Contact/sendRequest');?>" class="bg-light p-5 contact-form">
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Your Name">
+                <input type="text" class="form-control" name="nama" placeholder="Your Name" required>
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Your Email">
+                <input type="text" class="form-control" name="email" placeholder="Your Email" required>
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Subject">
+                <input type="text" class="form-control" name="judul" placeholder="Subject" required>
               </div>
               <div class="form-group">
-                <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
+                <textarea name="isi" id="" cols="30" rows="7" class="form-control" placeholder="Message" required></textarea>
               </div>
               <div class="form-group">
                 <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">

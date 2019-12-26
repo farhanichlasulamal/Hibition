@@ -12,11 +12,15 @@ class Home extends CI_Controller {
 	}
 
 	public function index(){
-		$data['artikel'] = $this->artikel_model->getNewestArtikelandCategory(6);
-		$data['tips'] = $this->tips_model->getRecentTips(5);
-		$data['ads1'] = $this->ads_model->getAdsByPriority(1);
-		$data['ads2'] = $this->ads_model->getAdsByPriority(2);
-		$this->load->view('home',$data);
+		if(!$this->session->hibition_logged_in){
+            $data['artikel'] = $this->artikel_model->getNewestArtikelandCategory(6);
+			$data['tips'] = $this->tips_model->getRecentTips(5);
+			$data['ads1'] = $this->ads_model->getAdsByPriority(1);
+			$data['ads2'] = $this->ads_model->getAdsByPriority(2);
+			$this->load->view('home',$data);
+        } else {
+            redirect('admin/Dashboard');
+        }
 	}
 
 	public function search(){

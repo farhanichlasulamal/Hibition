@@ -41,7 +41,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
         <div class="collapse navbar-collapse" id="ftco-nav">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item"><a href="" class="nav-link"><?php echo $this->session->nama?></a></li>
+            <li class="nav-item"><a href="" class="nav-link"><?php echo $this->session->hibition_nama?></a></li>
             <li class="nav-item">
               <a href="<?php echo base_url('Login/logout');?>" class="nav-link">Logout</a>
             </li>
@@ -109,6 +109,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <li><a href="<?php echo base_url('admin/Admin_Category')?>">Category <span>></span></a></li>
                 <li><a href="<?php echo base_url('admin/Admin_Article')?>">Article <span>></span></a></li>
                 <li class="active"><a href="">Ads <span>></span></a></li>
+              </div>
             </div>
           </div>
         </div>
@@ -128,7 +129,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           
           <!-- Modal body -->
           <div class="modal-body">
-            <?php echo form_open_multipart('admin/Ads/insertAds', 'id="formInsert"');?>
+            <?php echo form_open_multipart('admin/Admin_Ads/insertAds', 'id="formInsert"');?>
               <div class="form-group">
                 <label for="insertPrioritas" class="control-label mr-3">Priority Number :</label>
                 <input type="text" class="form-control" id="insertPrioritas" name="prioritas" placeholder="Priority" required>
@@ -167,7 +168,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           
           <!-- Modal body -->
           <div class="modal-body">
-            <?php echo form_open_multipart('admin/Ads/updateAds', 'id="formUpdate"');?>
+            <?php echo form_open_multipart('admin/Admin_Ads/updateAds', 'id="formUpdate"');?>
               <div class="form-group">
                 <label for="updatePrioritas" class="control-label mr-3">Priority Number :</label>
                 <input type="text" class="form-control" id="updatePrioritas" name="prioritas" required>
@@ -193,7 +194,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
       </div>
     </div>
-
 
     <!-- Modal Delete -->
     <div class="modal fade" id="modalDelete">

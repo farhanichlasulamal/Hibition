@@ -10,7 +10,7 @@ class Account extends CI_Controller {
 
 	public function updatePassword() {
 		if($this->input->post('change_pass')) {
-			$id = $this->session->userdata('id_karyawan');
+			$id = $this->session->userdata('hibition_id_karyawan');
 
 			$current_pass = $this->account_model->getCurrentPassword($id);
 			$old_pass = $this->input->post('old_pass');

@@ -9,10 +9,10 @@ class Login extends CI_Controller {
 	}
 
 	public function index() {
-		if(!$this->session->logged_in){
+		if(!$this->session->hibition_logged_in){
 			$this->load->view('login_page');
 		} else {
-			redirect('Home');
+			redirect('admin/Dashboard');
 		}
 	}
 
@@ -23,10 +23,10 @@ class Login extends CI_Controller {
 
 		if (isset($result)) {
 			$sess = array (
-				'id_karyawan' => $result->id_karyawan,
-				'nama' => $result->nama,
-				'prioritas' => $result->prioritas,
-				'logged_in' => true
+				'hibition_id_karyawan' => $result->id_karyawan,
+				'hibition_nama' => $result->nama,
+				'hibition_prioritas' => $result->prioritas,
+				'hibition_logged_in' => true
 			);
 			$this->session->set_userdata($sess);
 			redirect('admin/Dashboard');

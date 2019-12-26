@@ -9,8 +9,12 @@ class About extends CI_Controller {
 	}
 
 	public function index(){
-		$data['ads2'] = $this->ads_model->getAdsByPriority(2);
-		$this->load->view('about', $data);
+		if(!$this->session->hibition_logged_in){
+			$data['ads2'] = $this->ads_model->getAdsByPriority(2);
+			$this->load->view('about', $data);
+		} else {
+			redirect('admin/Dashboard');
+		}
 	}
 
 }

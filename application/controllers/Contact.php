@@ -6,16 +6,32 @@ class Contact extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
         $this->load->model("ads_model");
+        $this->load->model("message_model");
 	}
 
-	public function index()
-	{
-        $data['ads2'] = $this->ads_model->getAdsByPriority(2);
-		$this->load->view('contact',$data);
+	public function index(){
+        if(!$this->session->hibition_logged_in){
+            $data['ads1'] = $this->ads_model->getAdsByPriority(1);
+            $data['ads2'] = $this->ads_model->getAdsByPriority(2);
+            $this->load->view('contact',$data);
+        } else {
+            redirect('admin/Dashboard');
+        }
 	}
 
-	public function sendEmail()
+	public function sendRequest()
 	{
+        date_default_timezone_set('Asia/Jakarta');
+        $data = array(
+            'judul_pesan' => $this->input->post('judul'),
+            'tanggal_pesan' => date('Y-m-d H:i:s'),
+            'isi_pesan' => $this->input->post('isi'),
+            'nama_pengirim' => $this->input->post('nama'),
+            'email_pengirim' => $this->input->post('email')
+        );
+        $this->message_model->insertMessage($data);
+        $this->session->set_flashdata('success', "<strong>Success!</strong> Pesan berhasil terkirim.");
+
 		$config = [
             'mailtype'  => 'html',
             'charset'   => 'utf-8',

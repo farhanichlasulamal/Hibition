@@ -41,7 +41,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
         <div class="collapse navbar-collapse" id="ftco-nav">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item"><a href="" class="nav-link"><?php echo $this->session->nama?></a></li>
+            <li class="nav-item"><a href="" class="nav-link"><?php echo $this->session->hibition_nama?></a></li>
             <li class="nav-item">
               <a href="<?php echo base_url('Login/logout');?>" class="nav-link">Logout</a>
             </li>
@@ -111,6 +111,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <li class="active"><a href="">Category <span>></span></a></li>
                 <li><a href="<?php echo base_url('admin/Admin_Article')?>">Article <span>></span></a></li>
                 <li><a href="<?php echo base_url('admin/Admin_Ads')?>">Ads <span>></span></a></li>
+              </div>
             </div>
           </div>
         </div>
