@@ -38,7 +38,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="text text-center">
               <div class="card">
                 <div class="card-header">
-                  <h3 class="mb-0 p-2"><b>H I B I T I O N</b> <small>admin</small></h3>
+                  <h3 class="mb-0 p-2"><a href="<?php echo site_url();?>"><strong>H I B I T I O N</strong></a><small> admin</small></h3>
                 </div>
                 <div class="card-body bg-primary">
                   <?php

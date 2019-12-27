@@ -1,6 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+define('EMAIL_COMPANY', 'message.hibition@gmail.com');
+define('PASS_EMAIL_COMPANY', 'farhan12345678');
+define('EMAIL_CONTACT', 'contact.hibition@gmail.com');
+define('PASS_EMAIL_CONTACT', 'farhan12345678');
+
 class Contact extends CI_Controller {
 
 	public function __construct(){
@@ -19,26 +24,34 @@ class Contact extends CI_Controller {
         }
 	}
 
-	public function sendRequest()
-	{
-        date_default_timezone_set('Asia/Jakarta');
-        $data = array(
-            'judul_pesan' => $this->input->post('judul'),
-            'tanggal_pesan' => date('Y-m-d H:i:s'),
-            'isi_pesan' => $this->input->post('isi'),
-            'nama_pengirim' => $this->input->post('nama'),
-            'email_pengirim' => $this->input->post('email')
-        );
-        $this->message_model->insertMessage($data);
-        $this->session->set_flashdata('success', "<strong>Success!</strong> Pesan berhasil terkirim.");
+	public function sendRequest(){
+        $subject = $this->input->post('judul');
+        $message = $this->input->post('isi');
+        $recipient_name = $this->input->post('nama');
+        $recipient = $this->input->post('email');
 
-		$config = [
+        $msg_to_contact_email = '<strong>'.$subject.'</strong><br><br>'.$message.'<br><br><small>Sender<br>'.$recipient_name.' - '.$recipient.'</small>';
+
+
+        $this->sendEmail(EMAIL_CONTACT, 'Ads Request | '.$subject, $msg_to_contact_email);
+        $this->sendEmail($recipient, 'no-reply | HIBITION', 'Hai '.$recipient_name.'!<br><br>Thank you for trusting Hibition website to advertise your product or service. We will immediately respond to your request.<br><br>Best regards<br>Hibition Team<br><br><br>This email is intended for '.$recipient);
+
+        $this->session->set_flashdata('success', '<strong>Success!</strong> Pesan berhasil dikirim.');
+
+        $this->load->library('user_agent');
+        $refer =  $this->agent->referrer();
+        redirect($refer);
+
+	}
+
+    public function sendEmail($recipient, $subject, $message){
+        $config = [
             'mailtype'  => 'html',
             'charset'   => 'utf-8',
             'protocol'  => 'smtp',
             'smtp_host' => 'smtp.gmail.com',
-            'smtp_user' => 'email@gmail.com',  // Email gmail
-            'smtp_pass'   => 'passwordgmail',  // Password
+            'smtp_user' => EMAIL_COMPANY,  // Email gmail
+            'smtp_pass'   => PASS_EMAIL_COMPANY,  // Password
             'smtp_crypto' => 'ssl',
             'smtp_port'   => 465,
             'crlf'    => "\r\n",
@@ -48,27 +61,19 @@ class Contact extends CI_Controller {
         $this->load->library('email', $config);
 
         // Email dan nama pengirim
-        $this->email->from('no-reply@masrud.com', 'MasRud.com');
+        $this->email->from(EMAIL_COMPANY, 'HIBITION no-reply');
 
         // Email penerima
-        $this->email->to('penerima@domain.com'); // Ganti dengan email tujuan
-
-        // Lampiran email, isi dengan url/path file
-        $this->email->attach('https://masrud.com/content/images/20181215150137-codeigniter-smtp-gmail.png');
+        $this->email->to($recipient); // Ganti dengan email tujuan
 
         // Subject email
-        $this->email->subject('Kirim Email dengan SMTP Gmail CodeIgniter | MasRud.com');
+        $this->email->subject($subject);
 
         // Isi email
-        $this->email->message("Ini adalah contoh email yang dikirim menggunakan SMTP Gmail pada CodeIgniter.<br><br> Klik <strong><a href='https://masrud.com/post/kirim-email-dengan-smtp-gmail' target='_blank' rel='noopener'>disini</a></strong> untuk melihat tutorialnya.");
+        $this->email->message($message);
 
-        // Tampilkan pesan sukses atau error
-        if ($this->email->send()) {
-            echo 'Sukses! email berhasil dikirim.';
-        } else {
-            echo 'Error! email tidak dapat dikirim.';
-        }
-	}
+        $this->email->send();
+    }
 }
 
 /* End of file contact.php */

@@ -71,7 +71,7 @@ class Category extends CI_Controller {
 		$this->load->library('pagination');
 
 		//konfigurasi pagination
-		$config['base_url'] = base_url().'Category/show_categories_item/';
+		$config['base_url'] = base_url().'Category/show_categories_item_all/';
 		$config['total_rows'] = $this->artikel_model->countArticle();
 		$config['per_page'] = 9;
 		$config["uri_segment"] = 3;
