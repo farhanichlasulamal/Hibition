@@ -98,7 +98,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <?php foreach ($artikel as $key): ?>
           <div class="col-md-4">
             <div class="property-wrap ftco-animate">
-              <a href="<?php echo site_url('Article/show_article/'.$key->id_artikel);?>" class="img" style="background-image: url(<?php echo base_url('assets/images/'.$key->gambar_artikel)?>);"></a>
+              <a href="<?php echo site_url('Article/show_article/'.$key->id_artikel);?>" class="img" style="background-image: url(<?php echo base_url('assets/images/article/'.$key->gambar_artikel)?>);"></a>
               <div class="text">
                 <ul class="property_list">
                   <li><small><span class="icon icon-user"></span><?php echo $key->nama ?></small></li>
